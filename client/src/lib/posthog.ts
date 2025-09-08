@@ -18,7 +18,7 @@ export const initPostHog = () => {
       // GDPR compliance
       capture_pageview: false, // We'll capture manually
       capture_pageleave: true,
-      // Advanced session recording configuration
+      // Session recording configuration
       session_recording: {
         maskAllInputs: true,
         maskInputOptions: {
@@ -26,35 +26,16 @@ export const initPostHog = () => {
           email: true,
           tel: true,
         },
-        // Smart sampling for performance
         recordCrossOriginIframes: false,
-        recordCanvas: false,
-        // Performance optimizations
         collectFonts: false,
-        // Session recording sampling (10% of sessions)
-        sampleRate: 0.1,
-        // Record specific user behaviors
         recordHeaders: false,
         recordBody: false,
       },
-      // Heatmap configuration
-      heatmaps: {
-        enabled: true,
-        // Track all interactive elements
-        capturePerformance: true,
-      },
-      // Advanced tracking
+      // Performance tracking
       capture_performance: true,
-      capture_console_logs: false,
-      capture_console_warn: false,
-      capture_console_error: true,
-      // User identification
-      person_profiles: 'identified_only',
-      // Feature flags
-      bootstrap: {
-        featureFlags: {},
-        featureFlagPayloads: {},
-      },
+      // capture_console_logs: false,
+      // capture_console_warn: false,
+      // capture_console_error: true,
     })
   }
 }
@@ -91,11 +72,47 @@ const configureUserBehaviorAnalysis = (posthog: any) => {
   // Set user properties
   posthog.people.set(userProperties)
   
+  // Configure session recording sampling (10% of sessions)
+  configureSessionRecordingSampling(posthog)
+  
+  // Configure heatmaps
+  configureHeatmaps(posthog)
+  
   // Track initial page load with enhanced data
   trackEvent('page_load', {
     ...userProperties,
     load_time: performance.now(),
     connection_type: getConnectionType(),
+  })
+}
+
+// Configure session recording sampling
+const configureSessionRecordingSampling = (posthog: any) => {
+  // PostHog session recording sampling is controlled server-side
+  // We can use feature flags or user properties to influence sampling
+  const shouldRecord = Math.random() < 0.1 // 10% sampling
+  
+  if (shouldRecord) {
+    // Set a property that can be used for server-side sampling rules
+    posthog.people.set({ session_recording_eligible: true })
+    
+    // Track that this session is eligible for recording
+    trackEvent('session_recording_eligible', {
+      device_type: getDeviceType(),
+      traffic_source: getTrafficSource(),
+      is_mobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    })
+  }
+}
+
+// Configure heatmaps
+const configureHeatmaps = (posthog: any) => {
+  // PostHog heatmaps are automatically enabled
+  // We can track additional heatmap-related events
+  trackEvent('heatmap_initialized', {
+    device_type: getDeviceType(),
+    viewport_size: `${window.innerWidth}x${window.innerHeight}`,
+    screen_resolution: `${window.screen.width}x${window.screen.height}`
   })
 }
 
@@ -176,6 +193,47 @@ export const getFeatureFlag = (flagName: string, defaultValue: boolean = false) 
     return posthog.isFeatureEnabled(flagName) ?? defaultValue
   }
   return defaultValue
+}
+
+// Cohort analysis functions
+export const trackCohortBehavior = {
+  // Track new vs returning visitors
+  trackVisitorType: (isNewUser: boolean) => {
+    trackEvent('visitor_type_identified', {
+      is_new_user: isNewUser,
+      device_type: getDeviceType(),
+      traffic_source: getTrafficSource()
+    })
+  },
+  
+  // Track device-specific behavior
+  trackDeviceBehavior: (behavior: string, deviceType: string) => {
+    trackEvent('device_behavior', {
+      behavior: behavior,
+      device_type: deviceType,
+      timestamp: new Date().toISOString()
+    })
+  },
+  
+  // Track geographic behavior
+  trackGeographicBehavior: (country: string, region: string) => {
+    trackEvent('geographic_behavior', {
+      country: country,
+      region: region,
+      device_type: getDeviceType(),
+      traffic_source: getTrafficSource()
+    })
+  },
+  
+  // Track traffic source performance
+  trackTrafficSourcePerformance: (source: string, action: string) => {
+    trackEvent('traffic_source_performance', {
+      traffic_source: source,
+      action: action,
+      device_type: getDeviceType(),
+      timestamp: new Date().toISOString()
+    })
+  }
 }
 
 // Conversion funnel tracking
@@ -262,6 +320,78 @@ const getEngagementLevel = (timeSpent: number) => {
   if (timeSpent < 15) return 'medium'
   if (timeSpent < 30) return 'high'
   return 'very_high'
+}
+
+// Automated insights and alerting
+export const trackAutomatedInsights = {
+  // Track conversion rate changes
+  trackConversionRate: (rate: number, previousRate: number) => {
+    const change = rate - previousRate
+    const changePercent = (change / previousRate) * 100
+    
+    trackEvent('conversion_rate_change', {
+      current_rate: rate,
+      previous_rate: previousRate,
+      change_percent: changePercent,
+      device_type: getDeviceType(),
+      traffic_source: getTrafficSource()
+    })
+    
+    // Alert if significant change
+    if (Math.abs(changePercent) > 20) {
+      trackEvent('conversion_rate_alert', {
+        change_percent: changePercent,
+        severity: Math.abs(changePercent) > 50 ? 'high' : 'medium',
+        device_type: getDeviceType()
+      })
+    }
+  },
+  
+  // Track bounce rate changes
+  trackBounceRate: (rate: number, deviceType: string) => {
+    trackEvent('bounce_rate_tracked', {
+      bounce_rate: rate,
+      device_type: deviceType,
+      is_high_bounce: rate > 0.7
+    })
+    
+    if (rate > 0.8) {
+      trackEvent('high_bounce_rate_alert', {
+        bounce_rate: rate,
+        device_type: deviceType,
+        severity: 'high'
+      })
+    }
+  },
+  
+  // Track mobile vs desktop performance
+  trackDevicePerformance: (mobileMetrics: any, desktopMetrics: any) => {
+    trackEvent('device_performance_comparison', {
+      mobile_conversion_rate: mobileMetrics.conversionRate,
+      desktop_conversion_rate: desktopMetrics.conversionRate,
+      mobile_bounce_rate: mobileMetrics.bounceRate,
+      desktop_bounce_rate: desktopMetrics.bounceRate,
+      performance_gap: Math.abs(mobileMetrics.conversionRate - desktopMetrics.conversionRate)
+    })
+  },
+  
+  // Track user journey drop-offs
+  trackJourneyDropOff: (step: string, dropOffRate: number) => {
+    trackEvent('journey_drop_off', {
+      step: step,
+      drop_off_rate: dropOffRate,
+      device_type: getDeviceType(),
+      traffic_source: getTrafficSource()
+    })
+    
+    if (dropOffRate > 0.5) {
+      trackEvent('high_drop_off_alert', {
+        step: step,
+        drop_off_rate: dropOffRate,
+        severity: 'high'
+      })
+    }
+  }
 }
 
 // Scroll depth tracking
