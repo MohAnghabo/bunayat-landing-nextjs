@@ -29,8 +29,11 @@ export default defineConfig({
     emptyOutDir: true,
     // Performance optimizations
     minify: 'esbuild',
-    esbuild: {
-      drop: ['console', 'debugger'],
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
     },
     rollupOptions: {
       output: {
