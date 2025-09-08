@@ -2,32 +2,32 @@ export default function Features() {
   const features = [
     {
       emoji: "🏠",
-      headline: "Save 15+ Hours Weekly",
-      description: "Automated rent collection, maintenance coordination, and financial reporting",
+      headline: "Automated Invoicing",
+      description: "Stop creating invoices manually and chasing payment confirmations with phone calls. Bunanyat handles scheduled Arabic/English invoicing and automated reminder sequences while you focus on growing your portfolio.",
       items: [
-        "Auto reminders",
-        "Smart scheduling", 
-        "Real-time dashboards"
+        "Scheduled annual invoice generation",
+        "Automated SMS/email reminder sequences",
+        "Payment confirmation tracking"
       ]
     },
     {
       emoji: "🇴🇲",
-      headline: "Municipality-Compliant Documentation",
-      description: "Arabic/English invoices that meet Omani regulatory standards and GCC compliance requirements",
+      headline: "Built for Oman Compliance",
+      description: "Arabic invoices meet municipal requirements. English tenant communications keep everyone informed. Bank transfer tracking works with Omani mobile banking habits.",
       items: [
-        "Bilingual templates",
-        "OMR currency",
-        "Local payment methods"
+        "Arabic contracts with proper formatting",
+        "Compliant invoice numbering system",
+        "Bank transfer confirmation tracking"
       ]
     },
     {
       emoji: "⚡",
-      headline: "Live in 24 Hours",
-      description: "Complete setup with data migration and team training included",
+      headline: "Quick Implementation",
+      description: "Import your current tenant list via Excel. Generate your first Arabic invoice the same day. No technical training required - if you use WhatsApp, you can use Bunanyat.",
       items: [
-        "PDF contract import",
-        "CSV data migration",
-        "Free onboarding"
+        "Excel import with error checking",
+        "Same-day first invoice generation",
+        "Phone support in Arabic & English"
       ]
     }
   ];
@@ -37,10 +37,10 @@ export default function Features() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
-            Save 15+ Hours Weekly on Rent Collection
+            Three Honest Value Propositions
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Get paid faster with automated reminders and real-time dashboards.
+            Real solutions for real Omani landlord challenges.
           </p>
         </div>
         

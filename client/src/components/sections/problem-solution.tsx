@@ -3,28 +3,28 @@ import { X, Check } from "lucide-react";
 export default function ProblemSolution() {
   const problemSolutions = [
     {
-      problem: "Manual Rent Collection",
-      problemDesc: "Chasing tenants for payments manually",
-      solution: "Automated Rent Collection",
-      solutionDesc: "Automatic reminders & online processing"
+      problem: "Manual Invoice Creation",
+      problemDesc: "Typing Arabic invoices, municipal format compliance, tracking due dates manually",
+      solution: "Scheduled Generation",
+      solutionDesc: "Annual invoices auto-created in Arabic/English municipal format"
     },
     {
-      problem: "Language Barriers",
-      problemDesc: "Separate Arabic/English documentation",
-      solution: "Bilingual Documentation",
-      solutionDesc: "Auto-generate in Arabic & English"
+      problem: "Chasing Payment Confirmations",
+      problemDesc: "Manual follow-ups, awkward phone calls, remembering who confirmed payment",
+      solution: "Reminder Automation",
+      solutionDesc: "Email/SMS sequences until payment confirmed by tenant"
+    },
+    {
+      problem: "Language Documentation",
+      problemDesc: "Municipality requires Arabic contracts, tenants prefer English communication",
+      solution: "Bilingual Templates",
+      solutionDesc: "Municipality-compliant Arabic invoices, English tenant communications"
     },
     {
       problem: "Maintenance Chaos",
-      problemDesc: "Unorganized requests & vendors",
-      solution: "Smart Maintenance Management",
-      solutionDesc: "Centralized tracking & automation"
-    },
-    {
-      problem: "No Financial Insights",
-      problemDesc: "Lack of clear reporting",
-      solution: "Advanced Analytics",
-      solutionDesc: "Real-time dashboards & insights"
+      problemDesc: "WhatsApp screenshots, lost vendor contacts, unclear repair status",
+      solution: "Vendor Coordination",
+      solutionDesc: "SMS/email notifications to vendors, status tracking without apps"
     }
   ];
 
@@ -33,10 +33,10 @@ export default function ProblemSolution() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
-            Stop Losing Money on Manual Processes
+            Why Omani Landlords Choose Digital Solutions
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Traditional methods cost OMR 200+ monthly. Automate and get paid faster.
+            Traditional methods cost time and compliance risks. Streamline with automated workflows.
           </p>
         </div>
         

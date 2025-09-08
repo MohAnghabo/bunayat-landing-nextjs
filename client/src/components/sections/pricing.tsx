@@ -22,44 +22,39 @@ export default function Pricing() {
   const plans = [
     {
       name: "Starter",
-      description: "Perfect for small landlords",
+      description: "Perfect for 5-25 units",
       monthlyPrice: 25,
       features: [
-        "Up to 10 units",
-        "Basic rent collection",
-        "Maintenance tracking",
-        "Arabic/English support",
-        "Email support"
+        "Automated invoicing pays for itself",
+        "Eliminates manual Arabic invoice creation",
+        "Wijha Real Estate saved 12 hours monthly",
+        "Annual billing cycles"
       ],
       cta: "Learn More",
       popular: false
     },
     {
       name: "Professional",
-      description: "For growing property managers",
+      description: "Growing portfolios 25-150 units",
       monthlyPrice: 75,
       features: [
-        "Up to 50 units",
-        "Advanced automation",
-        "WhatsApp integration",
-        "Financial analytics",
-        "Priority support",
-        "API access"
+        "Add maintenance tracking",
+        "Vendor management included",
+        "Most customers upgrade here",
+        "Manual payment confirmation included"
       ],
       cta: "Learn More",
       popular: true
     },
     {
       name: "Enterprise",
-      description: "For large property companies",
+      description: "150+ units or multiple locations",
       monthlyPrice: 150,
       features: [
-        "Unlimited units",
-        "White-label solution",
-        "Custom integrations",
         "Advanced reporting",
-        "24/7 phone support",
-        "Dedicated account manager"
+        "Custom integrations available",
+        "Asawer Real Estate manages 400+ units",
+        "Payment gateway integration available"
       ],
       cta: "Learn More",
       popular: false
@@ -108,10 +103,10 @@ export default function Pricing() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
-            Start Saving Money Today
+            Simple Pricing That Scales With You
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Choose your plan. Free setup included.
+            Choose your plan. All plans include Arabic/English support and municipal compliance.
           </p>
           
           {/* Billing Toggle */}
@@ -236,7 +231,7 @@ export default function Pricing() {
         
         <div className="text-center mt-12">
           <p className="text-muted-foreground text-lg">
-            All plans include free setup, data migration, and 30-day money-back guarantee
+            All plans include Arabic/English support and municipal compliance.
           </p>
         </div>
       </div>

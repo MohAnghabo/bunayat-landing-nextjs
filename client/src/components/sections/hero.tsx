@@ -20,7 +20,7 @@ export default function Hero() {
 
   const benefits = [
     "Bilingual Arabic/English support",
-    "Automated rent collection & reminders",
+    "Automated invoicing & reminders",
     "Smart maintenance coordination"
   ];
 
@@ -30,10 +30,10 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-in-up">
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
-              Stop Chasing Rent Payments. Automate Everything.
+              Streamline Property Management in Arabic & English
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Save 15+ hours weekly with automated rent collection and tenant communication. Built for Arabic/English workflows in Oman. Trusted by landlords in Muscat and across the GCC region.
+              Omani landlords save 8+ hours weekly with automated invoicing, maintenance tracking, and bilingual tenant communications. Municipality-compliant from day one.
             </p>
             
             <div className="space-y-4">

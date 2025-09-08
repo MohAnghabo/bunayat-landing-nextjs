@@ -10,9 +10,9 @@ export default function FinalCTA() {
   };
 
   const stats = [
-    { value: "24 Hours", label: "Average setup time" },
-    { value: "30 Days", label: "Money-back guarantee" },
-    { value: "24/7", label: "Support availability" }
+    { value: "8+ Hours", label: "saved weekly on invoicing" },
+    { value: "30 Days", label: "average setup to full workflow" },
+    { value: "24/7", label: "Arabic/English support" }
   ];
 
   return (
@@ -20,13 +20,13 @@ export default function FinalCTA() {
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
-            Get Your 15+ Hours Back Weekly
+            Ready to streamline your property management?
           </h2>
           <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-            Join hundreds of landlords saving 15+ hours weekly.
+            Join 50+ Omani landlords already saving time with Bunanyat's automated invoicing and municipal compliance features.
           </p>
           
-          <div className="flex justify-center items-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-12">
             <Button 
               onClick={handleRequestDemo}
               className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105 hover:shadow-lg min-h-[44px] w-full sm:w-auto"

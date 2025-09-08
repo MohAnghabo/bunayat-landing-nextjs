@@ -6,36 +6,36 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "How quickly can I get started with Bunayat?",
-      answer: "Most customers are running within 24 hours. Free setup assistance and data migration included."
+      question: "How quickly can we start generating invoices?",
+      answer: "Most landlords generate their first Arabic invoice within 30 minutes. We import your Excel tenant list, verify municipal formatting, and you can create compliant invoices same-day."
     },
     {
-      question: "Does Bunayat support Arabic documents and communication?",
-      answer: "Yes! Fully bilingual with Arabic/English contracts, invoices, and WhatsApp communication."
+      question: "Do tenants need to download an app for payments?",
+      answer: "No. Tenants receive SMS and email notifications with invoice details. They confirm payments via bank transfer using their mobile number - the same method they use for other bills. You track confirmations in Bunanyat."
     },
     {
-      question: "What payment methods are supported in Oman?",
-      answer: "Integrates with major Omani banks. Supports bank transfers, cards, and mobile payments in OMR."
+      question: "Is Arabic language support really complete?",
+      answer: "Yes. All invoices, contracts, and official documents generate in proper Arabic formatting that meets municipality requirements. Our Omani customers submit these for audits without modifications."
     },
     {
-      question: "Can I import my existing property data?",
-      answer: "Yes! Upload PDF contracts or photos to import data. CSV imports from Excel also supported."
+      question: "How does payment tracking work?",
+      answer: "Tenants pay via bank transfer and confirm payment through SMS or email. You mark payments as received in Bunanyat, which automatically stops reminder sequences. Payment gateway integration is available for Enterprise plans."
     },
     {
-      question: "Is there a free trial available?",
-      answer: "14-day free trial with full access. No credit card required. 30-day money-back guarantee."
+      question: "Can we export data for our accountant?",
+      answer: "Everything exports to Excel with Omani accounting standards. Invoices, payment confirmations, tenant records - your accountant gets familiar formats without learning new software."
     },
     {
       question: "What kind of support do you provide?",
-      answer: "Arabic and English support via email, chat, and phone. Local team understands Omani regulations."
+      answer: "Arabic and English support via email, chat, and phone. Local team understands Omani regulations and municipal compliance requirements."
     },
     {
       question: "Is my data secure and compliant with Omani regulations?",
-      answer: "Enterprise-grade security with 256-bit SSL encryption. Complies with Omani data protection regulations."
+      answer: "Enterprise-grade security with 256-bit SSL encryption. Complies with Omani data protection regulations and municipal audit requirements."
     },
     {
       question: "Can I upgrade or downgrade my plan anytime?",
-      answer: "Yes! Upgrade or downgrade anytime. Changes take effect immediately. No long-term contracts."
+      answer: "Yes! Upgrade or downgrade anytime. Changes take effect immediately. No long-term contracts required."
     }
   ];
 
