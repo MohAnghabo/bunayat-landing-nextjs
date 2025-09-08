@@ -1,6 +1,7 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { z } from "zod";
+import { sendDemoRequestNotification, sendDemoRequestConfirmation } from "../lib/email";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Demo request submission endpoint
@@ -22,13 +23,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
       const validatedData = demoRequestSchema.parse(req.body);
       
-      // In a real implementation, this would:
+      console.log("Demo request received@@:", validatedData);
+      
+      // Send email notifications
+      try {
+        // Send notification to admin
+        await sendDemoRequestNotification(validatedData);
+        
+        // Send confirmation to user
+        await sendDemoRequestConfirmation(validatedData);
+        
+        console.log("Email notifications sent successfully");
+      } catch (emailError) {
+        console.error("Email notification failed:", emailError);
+        // Don't fail the request if email fails - still return success
+      }
+      
+      // In a real implementation, this would also:
       // 1. Save to database
-      // 2. Send notification emails
       // 3. Integrate with CRM
       // 4. Schedule follow-up tasks
-      
-      console.log("Demo request received:", validatedData);
       
       res.json({ 
         success: true, 

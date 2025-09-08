@@ -1,5 +1,6 @@
 import { z } from "zod";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
+import { sendDemoRequestNotification, sendDemoRequestConfirmation } from "../lib/email";
 
 const demoRequestSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -39,13 +40,27 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   try {
     const validatedData = demoRequestSchema.parse(req.body);
     
-    // In a real implementation, this would:
+    console.log("Demo request received!!:", validatedData);
+    
+    // Send email notifications
+    try {
+      // Send notification to admin
+      console.log("Sending notification to admin");
+      await sendDemoRequestNotification(validatedData);
+      
+      // Send confirmation to user
+      await sendDemoRequestConfirmation(validatedData);
+      
+      console.log("Email notifications sent successfully");
+    } catch (emailError) {
+      console.error("Email notification failed:", emailError);
+      // Don't fail the request if email fails - still return success
+    }
+    
+    // In a real implementation, this would also:
     // 1. Save to database
-    // 2. Send notification emails
     // 3. Integrate with CRM
     // 4. Schedule follow-up tasks
-    
-    console.log("Demo request received:", validatedData);
     
     res.status(200).json({ 
       success: true, 
