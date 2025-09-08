@@ -13,7 +13,7 @@ export default function Features() {
     {
       emoji: "🇴🇲",
       headline: "Municipality-Compliant Documentation",
-      description: "Arabic/English invoices that meet local regulatory standards",
+      description: "Arabic/English invoices that meet Omani regulatory standards and GCC compliance requirements",
       items: [
         "Bilingual templates",
         "OMR currency",

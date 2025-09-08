@@ -24,7 +24,7 @@ export default function Hero() {
               Stop Chasing Rent Payments. Automate Everything.
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Save 15+ hours weekly with automated rent collection and tenant communication. Built for Arabic/English workflows in Oman.
+              Save 15+ hours weekly with automated rent collection and tenant communication. Built for Arabic/English workflows in Oman. Trusted by landlords in Muscat and across the GCC region.
             </p>
             
             <div className="space-y-4">
@@ -54,7 +54,7 @@ export default function Hero() {
           </div>
           
           <div className="relative animate-fade-in-up animate-delay-300">
-            <div className="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 border border-border">
+            <figure className="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 border border-border" role="img" aria-label="Bunayat property management dashboard showing rent collection, maintenance tracking, and financial reporting for Omani landlords">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-destructive rounded-full"></div>
@@ -98,7 +98,7 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
-            </div>
+            </figure>
           </div>
         </div>
       </div>

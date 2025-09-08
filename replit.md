@@ -11,6 +11,7 @@ Preferred communication style: Simple, everyday language.
 ## System Architecture
 
 ### Frontend Architecture
+
 - **React 18** with TypeScript for type safety and modern component development
 - **Vite** as the build tool for fast development and optimized production builds
 - **Wouter** for client-side routing instead of React Router
@@ -20,6 +21,7 @@ Preferred communication style: Simple, everyday language.
 - Component-based architecture with reusable UI components organized in `/client/src/components/ui/`
 
 ### Backend Architecture
+
 - **Express.js** server with TypeScript
 - **RESTful API** design with structured error handling middleware
 - **Zod schemas** for request validation and type safety
@@ -27,12 +29,14 @@ Preferred communication style: Simple, everyday language.
 - **Vite middleware integration** for development server with HMR support
 
 ### Database Strategy
+
 - **Drizzle ORM** configured with PostgreSQL dialect
 - **Schema-first approach** with shared type definitions between frontend and backend
 - **Migration support** through drizzle-kit for database versioning
 - Current implementation uses in-memory storage with interface that can be easily swapped for database persistence
 
 ### Styling and Design System
+
 - **Tailwind CSS** with custom color palette and design tokens
 - **CSS custom properties** for theming support
 - **shadcn/ui** component library with "new-york" style configuration
@@ -41,12 +45,14 @@ Preferred communication style: Simple, everyday language.
 - **Custom animations** and transitions for enhanced user experience
 
 ### Form Handling and Validation
+
 - **React Hook Form** for performant form management
 - **Zod schemas** for runtime validation and TypeScript type inference
 - **Shared validation schemas** between frontend and backend for consistency
 - **Toast notifications** for user feedback on form submissions
 
 ### Development and Build Process
+
 - **TypeScript configuration** with strict mode enabled
 - **ESM modules** throughout the application
 - **Path aliases** for clean import statements (@/, @shared/)
@@ -56,6 +62,7 @@ Preferred communication style: Simple, everyday language.
 ## External Dependencies
 
 ### UI and Styling
+
 - **@radix-ui/** - Comprehensive set of unstyled, accessible UI primitives
 - **lucide-react** - Icon library for consistent iconography
 - **tailwindcss** - Utility-first CSS framework
@@ -63,20 +70,24 @@ Preferred communication style: Simple, everyday language.
 - **clsx** and **tailwind-merge** - Utility functions for conditional classes
 
 ### Database and ORM
+
 - **@neondatabase/serverless** - Serverless PostgreSQL client
 - **drizzle-orm** - Type-safe ORM with excellent TypeScript support
 - **drizzle-zod** - Integration between Drizzle and Zod for schema validation
 
 ### State Management and API
+
 - **@tanstack/react-query** - Server state management and caching
 - **@hookform/resolvers** - Validation resolvers for React Hook Form
 
 ### Development Tools
+
 - **@replit/** plugins - Development environment integration
 - **esbuild** - Fast JavaScript bundler for production builds
 - **tsx** - TypeScript execution environment for development server
 
 ### Potential Future Integrations
+
 - **Stripe/PayPal** - Payment processing for subscription management
 - **WhatsApp Business API** - Direct integration for tenant communication
 - **Twilio** - SMS notifications for rent reminders and updates
