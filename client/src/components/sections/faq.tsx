@@ -15,7 +15,7 @@ export default function FAQ() {
     },
     {
       question: "What payment methods are supported in Oman?",
-      answer: "Bunayat integrates with major Omani banks including Bank Muscat, HSBC Oman, and National Bank of Oman. We support bank transfers, credit/debit cards, and mobile payments. All transactions are processed in OMR with full compliance to local banking regulations."
+      answer: "Bunayat integrates with major Omani banks including ThawaniPay Oman, and National Bank of Oman. We support bank transfers, credit/debit cards, and mobile payments. All transactions are processed in OMR with full compliance to local banking regulations."
     },
     {
       question: "Can I import my existing property data?",

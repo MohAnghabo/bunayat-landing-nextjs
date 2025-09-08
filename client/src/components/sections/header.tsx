@@ -29,9 +29,6 @@ export default function Header() {
           <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="nav-pricing">
             Pricing
           </a>
-          <a href="#about" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="nav-about">
-            About
-          </a>
           <a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="nav-faq">
             FAQ
           </a>
@@ -76,14 +73,6 @@ export default function Header() {
               data-testid="mobile-nav-pricing"
             >
               Pricing
-            </a>
-            <a 
-              href="#about" 
-              className="block text-muted-foreground hover:text-foreground"
-              onClick={() => setMobileMenuOpen(false)}
-              data-testid="mobile-nav-about"
-            >
-              About
             </a>
             <a 
               href="#faq" 

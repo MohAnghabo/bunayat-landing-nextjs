@@ -17,7 +17,7 @@ export default function Features() {
       description: "Automated rent collection, payment tracking, and financial reporting with OMR currency support.",
       items: [
         "Automated rent reminders & late fees",
-        "Online payment processing (Bank Muscat, HSBC)",
+        "Online payment processing (ThawaniPay)",
         "Financial dashboards & analytics",
         "Tax reporting & expense tracking"
       ]
