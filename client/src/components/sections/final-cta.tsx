@@ -1,17 +1,11 @@
 import { Button } from "@/components/ui/button";
+import DemoRequestForm from "@/components/forms/demo-request-form";
 
 export default function FinalCTA() {
-  const handleStartTrial = () => {
-    const demoSection = document.getElementById("demo");
-    if (demoSection) {
-      demoSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const handleScheduleDemo = () => {
-    const demoSection = document.getElementById("demo");
-    if (demoSection) {
-      demoSection.scrollIntoView({ behavior: "smooth" });
+  const handleRequestDemo = () => {
+    const demoForm = document.getElementById("demo-form");
+    if (demoForm) {
+      demoForm.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -22,7 +16,7 @@ export default function FinalCTA() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary/10 to-secondary/10 relative overflow-hidden">
+    <section id="final-cta" className="py-20 bg-gradient-to-br from-primary/10 to-secondary/10 relative overflow-hidden">
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
@@ -32,21 +26,13 @@ export default function FinalCTA() {
             Join hundreds of property managers in Oman who have already automated their operations, improved tenant satisfaction, and increased revenue with Bunayat.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
+          <div className="flex justify-center items-center mb-12">
             <Button 
-              onClick={handleStartTrial}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105 hover:shadow-lg"
-              data-testid="button-start-trial"
+              onClick={handleRequestDemo}
+              className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105 hover:shadow-lg"
+              data-testid="button-request-demo-final"
             >
-              Start Free Trial
-            </Button>
-            <Button 
-              onClick={handleScheduleDemo}
-              variant="outline"
-              className="bg-card hover:bg-card/80 text-foreground border border-border px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105"
-              data-testid="button-final-schedule-demo"
-            >
-              Schedule Demo
+              Request Demo
             </Button>
           </div>
           
@@ -57,6 +43,10 @@ export default function FinalCTA() {
                 <div className="text-muted-foreground">{stat.label}</div>
               </div>
             ))}
+          </div>
+          
+          <div id="demo-form" className="mt-12">
+            <DemoRequestForm />
           </div>
           
           <div className="mt-12 p-6 bg-card rounded-xl shadow-lg border border-border max-w-md mx-auto">

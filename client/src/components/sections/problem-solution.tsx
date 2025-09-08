@@ -1,4 +1,4 @@
-import { X, Check, CheckCircle } from "lucide-react";
+import { X, Check } from "lucide-react";
 
 export default function ProblemSolution() {
   const problemSolutions = [
@@ -26,13 +26,6 @@ export default function ProblemSolution() {
       solution: "Advanced Analytics",
       solutionDesc: "Real-time dashboards & insights"
     }
-  ];
-
-  const localFeatures = [
-    { title: "OMR Integration", subtitle: "Local payments" },
-    { title: "MOH Compliance", subtitle: "Legal standards" },
-    { title: "RTL Support", subtitle: "Arabic interface" },
-    { title: "24/7 Support", subtitle: "Arabic & English" }
   ];
 
   return (
@@ -81,27 +74,6 @@ export default function ProblemSolution() {
               </div>
             </div>
           ))}
-        </div>
-        
-        <div className="grid md:grid-cols-1 gap-12 items-center">
-         
-          <div className="bg-primary/5 p-8 rounded-2xl border border-primary/10 text-center animate-fade-in-up animate-delay-300">
-            <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
-              <CheckCircle className="w-8 h-8 text-primary-foreground" />
-            </div>
-            <h3 className="text-2xl font-bold text-foreground mb-4">Built for Oman's Market</h3>
-            <p className="text-muted-foreground mb-6">
-              The only platform designed specifically for Omani regulations, payment methods, and cultural preferences.
-            </p>
-            <div className="grid grid-cols-2 gap-3 text-sm">
-              {localFeatures.map((feature, index) => (
-                <div key={index} className="p-3 bg-white rounded-lg">
-                  <div className="font-semibold text-primary">{feature.title}</div>
-                  <div className="text-muted-foreground">{feature.subtitle}</div>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
       </div>
     </section>

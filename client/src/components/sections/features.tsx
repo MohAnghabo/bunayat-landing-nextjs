@@ -41,7 +41,9 @@ export default function Features() {
         "WhatsApp integration for instant messaging",
         "SMS notifications in Arabic/English",
         "Tenant self-service portal",
-        "Document translation & generation"
+        "Document translation & generation",
+        "Live dashboard walkthroughs",
+        "ROI calculator for potential savings"
       ]
     }
   ];

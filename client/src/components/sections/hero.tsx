@@ -3,9 +3,9 @@ import { Check } from "lucide-react";
 
 export default function Hero() {
   const handleRequestDemo = () => {
-    const demoSection = document.getElementById("demo");
-    if (demoSection) {
-      demoSection.scrollIntoView({ behavior: "smooth" });
+    const demoForm = document.getElementById("demo-form");
+    if (demoForm) {
+      demoForm.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -43,7 +43,7 @@ export default function Hero() {
               <Button 
                 onClick={handleRequestDemo}
                 size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 text-lg font-semibold transition-all hover:scale-105 hover:shadow-lg"
+                className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-8 py-4 text-lg font-semibold transition-all hover:scale-105 hover:shadow-lg"
                 data-testid="button-hero-request-demo"
               >
                 Request Demo

@@ -1,12 +1,9 @@
 import Header from "@/components/sections/header";
 import Hero from "@/components/sections/hero";
 import ProblemSolution from "@/components/sections/problem-solution";
-import SocialProof from "@/components/sections/social-proof";
 import Features from "@/components/sections/features";
 import HowItWorks from "@/components/sections/how-it-works";
-import CompetitiveAdvantage from "@/components/sections/competitive-advantage";
 import Pricing from "@/components/sections/pricing";
-import Demo from "@/components/sections/demo";
 import FAQ from "@/components/sections/faq";
 import FinalCTA from "@/components/sections/final-cta";
 import Footer from "@/components/sections/footer";
@@ -17,12 +14,9 @@ export default function Home() {
       <Header />
       <Hero />
       <ProblemSolution />
-      {/* <SocialProof /> */}
       <Features />
       <HowItWorks />
-      <CompetitiveAdvantage />
       <Pricing />
-      <Demo />
       <FAQ />
       <FinalCTA />
       <Footer />

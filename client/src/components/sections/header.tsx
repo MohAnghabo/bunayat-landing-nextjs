@@ -6,9 +6,9 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleRequestDemo = () => {
-    const demoSection = document.getElementById("demo");
-    if (demoSection) {
-      demoSection.scrollIntoView({ behavior: "smooth" });
+    const demoForm = document.getElementById("demo-form");
+    if (demoForm) {
+      demoForm.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -36,7 +36,7 @@ export default function Header() {
         
         <Button 
           onClick={handleRequestDemo}
-          className="hidden md:block bg-primary hover:bg-primary/90 text-primary-foreground font-medium transition-all hover:scale-105"
+          className="hidden md:block bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-medium transition-all hover:scale-105"
           data-testid="button-request-demo"
         >
           Request Demo
@@ -87,7 +87,7 @@ export default function Header() {
                 handleRequestDemo();
                 setMobileMenuOpen(false);
               }}
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+              className="w-full bg-[#2563eb] hover:bg-[#1d4ed8] text-white"
               data-testid="mobile-button-request-demo"
             >
               Request Demo

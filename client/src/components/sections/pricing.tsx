@@ -30,7 +30,7 @@ export default function Pricing() {
         "Arabic/English support",
         "Email support"
       ],
-      cta: "Choose Starter",
+      cta: "Learn More",
       popular: false
     },
     {
@@ -45,7 +45,7 @@ export default function Pricing() {
         "Priority support",
         "API access"
       ],
-      cta: "Choose Professional",
+      cta: "Learn More",
       popular: true
     },
     {
@@ -60,7 +60,7 @@ export default function Pricing() {
         "24/7 phone support",
         "Dedicated account manager"
       ],
-      cta: "Contact Sales",
+      cta: "Learn More",
       popular: false
     }
   ];
@@ -89,10 +89,10 @@ export default function Pricing() {
     };
   };
 
-  const handlePlanSelection = (planName: string) => {
-    const demoSection = document.getElementById("demo");
-    if (demoSection) {
-      demoSection.scrollIntoView({ behavior: "smooth" });
+  const handleLearnMore = () => {
+    const demoForm = document.getElementById("demo-form");
+    if (demoForm) {
+      demoForm.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -212,10 +212,10 @@ export default function Pricing() {
                   ))}
                 </ul>
                 <Button 
-                  onClick={() => handlePlanSelection(plan.name)}
+                  onClick={handleLearnMore}
                   className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors ${
                     plan.popular 
-                      ? 'bg-primary hover:bg-primary/90 text-primary-foreground' 
+                      ? 'bg-[#2563eb] hover:bg-[#1d4ed8] text-white' 
                       : 'bg-muted hover:bg-muted/80 text-foreground'
                   }`}
                   data-testid={`button-plan-${plan.name.toLowerCase()}`}
