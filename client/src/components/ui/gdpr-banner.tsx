@@ -3,8 +3,10 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { X, Shield, Cookie } from 'lucide-react'
 import posthog from '@/lib/posthog'
+import { useTranslation } from 'react-i18next'
 
 export default function GDPRBanner() {
+  const { t } = useTranslation()
   const [showBanner, setShowBanner] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
 
@@ -61,9 +63,9 @@ export default function GDPRBanner() {
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
       }`}>
         <CardContent className="p-6">
-          <div className="flex items-start space-x-4">
+          <div className="flex items-start space-x-4 rtl:space-x-reverse">
             <div className="flex-shrink-0">
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 rtl:space-x-reverse">
                 <Shield className="w-5 h-5 text-primary" />
                 <Cookie className="w-5 h-5 text-primary" />
               </div>
@@ -71,10 +73,10 @@ export default function GDPRBanner() {
             
             <div className="flex-1">
               <h3 className="text-lg font-semibold text-foreground mb-2">
-                Privacy & Analytics
+                {t('gdpr.title')}
               </h3>
               <p className="text-muted-foreground mb-4">
-                We use analytics to improve your experience on our website. This helps us understand how you use our property management platform and optimize it for better performance. Your data is handled securely and never shared with third parties.
+                {t('gdpr.description')}
               </p>
               
               <div className="flex flex-col sm:flex-row gap-3">
@@ -82,20 +84,20 @@ export default function GDPRBanner() {
                   onClick={handleAccept}
                   className="bg-primary hover:bg-primary/90 text-primary-foreground"
                 >
-                  Accept Analytics
+                  {t('gdpr.accept')}
                 </Button>
                 <Button 
                   onClick={handleDecline}
                   variant="outline"
                 >
-                  Decline
+                  {t('gdpr.decline')}
                 </Button>
                 <Button 
                   onClick={() => window.open('/privacy-policy', '_blank')}
                   variant="ghost"
                   className="text-sm"
                 >
-                  Privacy Policy
+                  {t('gdpr.privacyPolicy')}
                 </Button>
               </div>
             </div>

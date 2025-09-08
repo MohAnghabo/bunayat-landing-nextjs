@@ -3,6 +3,82 @@
 @tailwind components;
 @tailwind utilities;
 
+/* RTL Support */
+[dir="rtl"] {
+  direction: rtl;
+}
+
+[dir="ltr"] {
+  direction: ltr;
+}
+
+/* RTL-specific font adjustments */
+[dir="rtl"] body {
+  font-family: 'Noto Sans Arabic', 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+[dir="ltr"] body {
+  font-family: 'Inter', 'Noto Sans Arabic', system-ui, -apple-system, sans-serif;
+}
+
+/* RTL spacing utilities */
+.rtl\:space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
+}
+
+.ltr\:space-x-reverse > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+}
+
+/* Phone number RTL fix */
+[dir="rtl"] a[href^="tel:"] {
+  direction: ltr;
+  unicode-bidi: bidi-override;
+}
+
+[dir="rtl"] .phone-number {
+  direction: ltr;
+  unicode-bidi: bidi-override;
+}
+
+/* Form inputs RTL fixes */
+[dir="rtl"] input[type="tel"] {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: bidi-override;
+}
+
+[dir="rtl"] input[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: bidi-override;
+}
+
+/* Select dropdown RTL fixes */
+[dir="rtl"] .select-content {
+  text-align: right;
+}
+
+[dir="rtl"] .select-item {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .select-trigger {
+  text-align: right;
+}
+
+/* Input field RTL fixes */
+[dir="rtl"] input:not([type="tel"]):not([dir="ltr"]) {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] textarea:not([dir="ltr"]) {
+  text-align: right;
+  direction: rtl;
+}
+
 :root {
   --background: hsl(0, 0%, 100%);
   --foreground: hsl(222.2, 84%, 4.9%);

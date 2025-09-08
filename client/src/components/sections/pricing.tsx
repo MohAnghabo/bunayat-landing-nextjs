@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { trackEvent, trackConversionFunnel } from "@/lib/posthog";
 
 // OMR formatter with maximum 2 decimal places
@@ -17,49 +18,23 @@ type DisplayPrice = {
 };
 
 export default function Pricing() {
+  const { t } = useTranslation();
   const [isAnnual, setIsAnnual] = useState(true);
 
-  const plans = [
-    {
-      name: "Starter",
-      description: "Perfect for 5-25 units",
-      monthlyPrice: 25,
-      features: [
-        "Automated invoicing pays for itself",
-        "Eliminates manual Arabic invoice creation",
-        "Wijha Real Estate saved 12 hours monthly",
-        "Annual billing cycles"
-      ],
-      cta: "Learn More",
-      popular: false
-    },
-    {
-      name: "Professional",
-      description: "Growing portfolios 25-150 units",
-      monthlyPrice: 75,
-      features: [
-        "Add maintenance tracking",
-        "Vendor management included",
-        "Most customers upgrade here",
-        "Manual payment confirmation included"
-      ],
-      cta: "Learn More",
-      popular: true
-    },
-    {
-      name: "Enterprise",
-      description: "150+ units or multiple locations",
-      monthlyPrice: 150,
-      features: [
-        "Advanced reporting",
-        "Custom integrations available",
-        "Asawer Real Estate manages 400+ units",
-        "Payment gateway integration available"
-      ],
-      cta: "Learn More",
-      popular: false
-    }
-  ];
+  const plans = t('pricing.plans', { returnObjects: true }) as Array<{
+    name: string;
+    description: string;
+    features: string[];
+    cta: string;
+    popular: boolean;
+    popularLabel?: string;
+  }>;
+
+  // Add monthly prices back to the plans
+  const plansWithPrices = plans.map((plan, index) => ({
+    ...plan,
+    monthlyPrice: index === 0 ? 25 : index === 1 ? 75 : 150
+  }));
 
   const getDisplayPrice = (monthlyPrice: number, planName: string): DisplayPrice => {
     if (planName === "Enterprise") {
@@ -75,7 +50,7 @@ export default function Pricing() {
       return {
         price: omrFmt.format(annualPrice),
         period: "/year",
-        savings: `Save ${omrFmt.format(monthlyPrice * 2)}`
+        savings: `${t('pricing.save')} ${omrFmt.format(monthlyPrice * 2)}`
       };
     }
     return {
@@ -103,10 +78,10 @@ export default function Pricing() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
-            Simple Pricing That Scales With You
+            {t('pricing.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Choose your plan. All plans include Arabic/English support and municipal compliance.
+            {t('pricing.subtitle')}
           </p>
           
           {/* Billing Toggle */}
@@ -125,7 +100,7 @@ export default function Pricing() {
               }}
               aria-controls="billing-toggle"
             >
-              Monthly
+{t('pricing.monthly')}
             </label>
             <button
               onClick={() => setIsAnnual(!isAnnual)}
@@ -164,18 +139,18 @@ export default function Pricing() {
               }}
               aria-controls="billing-toggle"
             >
-              Annual
+{t('pricing.annually')}
             </label>
             {isAnnual && (
               <span className="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded-full">
-                2 months free
+{t('pricing.monthsFree')}
               </span>
             )}
           </div>
         </div>
         
         <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
-          {plans.map((plan, index) => {
+          {plansWithPrices.map((plan, index) => {
             const displayPrice = getDisplayPrice(plan.monthlyPrice, plan.name);
             return (
               <div 
@@ -187,7 +162,7 @@ export default function Pricing() {
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
-                    Most Popular
+{plan.popularLabel}
                   </div>
                 )}
                 <h3 className="text-2xl font-bold text-foreground mb-2">{plan.name}</h3>
@@ -207,7 +182,7 @@ export default function Pricing() {
                 </div>
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center space-x-3">
+                    <li key={featureIndex} className="flex items-center space-x-3 rtl:space-x-reverse">
                       <Check className="w-5 h-5 text-secondary" />
                       <span className="text-foreground">{feature}</span>
                     </li>
@@ -231,7 +206,7 @@ export default function Pricing() {
         
         <div className="text-center mt-12">
           <p className="text-muted-foreground text-lg">
-            All plans include Arabic/English support and municipal compliance.
+            {t('pricing.footer')}
           </p>
         </div>
       </div>

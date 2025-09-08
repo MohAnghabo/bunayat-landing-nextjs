@@ -1,37 +1,30 @@
+import { ReactElement, JSXElementConstructor, ReactNode, Key } from "react";
+import { useTranslation } from "react-i18next";
+
 export default function Footer() {
+  const { t } = useTranslation();
+  
   const footerSections = [
     {
-      title: "Features",
-      links: [
-        { name: "Property Management", href: "#" },
-        { name: "Rent Collection", href: "#" },
-        { name: "Maintenance Tracking", href: "#" },
-        { name: "Financial Reports", href: "#" },
-        { name: "Tenant Communication", href: "#" },
-        { name: "Arabic Support", href: "#" }
-      ]
+      title: t('footer.sections.features.title'),
+      links: (t('footer.sections.features.links', { returnObjects: true }) as string[]).map((name: string) => ({
+        name,
+        href: "#"
+      }))
     },
     {
-      title: "Company",
-      links: [
-        { name: "About Us", href: "#about" },
-        { name: "Careers", href: "#" },
-        { name: "Press Kit", href: "#" },
-        { name: "Privacy Policy", href: "#" },
-        { name: "Terms of Service", href: "#" },
-        { name: "Contact", href: "#" }
-      ]
+      title: t('footer.sections.company.title'),
+      links: (t('footer.sections.company.links', { returnObjects: true }) as string[]).map((name: string) => ({
+        name,
+        href: name === "About Us" ? "#about" : "#"
+      }))
     },
     {
-      title: "Support",
-      links: [
-        { name: "Help Center", href: "#" },
-        { name: "Documentation", href: "#" },
-        { name: "API Reference", href: "#" },
-        { name: "System Status", href: "#" },
-        { name: "Live Chat", href: "#" },
-        { name: "+968 9115 5004", href: "tel:+96824123456" }
-      ]
+      title: t('footer.sections.support.title'),
+      links: (t('footer.sections.support.links', { returnObjects: true }) as string[]).map((name: string) => ({
+        name,
+        href: name === "+968 9115 5004" ? "tel:+96891155004" : "#"
+      }))
     }
   ];
 
@@ -47,9 +40,9 @@ export default function Footer() {
               <span className="font-bold text-xl text-background">Bunayat</span>
             </div>
             <p className="text-muted text-sm leading-relaxed">
-              Modern property management platform designed specifically for the Omani market with bilingual support and local integrations.
+              {t('footer.description')}
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 rtl:space-x-reverse">
               <a href="#" className="text-muted hover:text-background transition-colors" data-testid="link-twitter">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
@@ -72,12 +65,13 @@ export default function Footer() {
             <div key={index}>
               <h3 className="font-semibold text-background mb-4">{section.title}</h3>
               <ul className="space-y-2 text-sm text-muted">
-                {section.links.map((link, linkIndex) => (
+                {section.links.map((link: { href: string | undefined; name: string | number | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined; }, linkIndex: Key | null | undefined) => (
                   <li key={linkIndex}>
                     <a 
                       href={link.href} 
                       className="hover:text-background transition-colors"
-                      data-testid={`footer-link-${link.name.toLowerCase().replace(/\s+/g, '-')}`}
+                      data-testid={`footer-link-${String(link.name).toLowerCase().replace(/\s+/g, '-')}`}
+                      dir={String(link.name).includes('+968') ? 'ltr' : 'auto'}
                     >
                       {link.name}
                     </a>
@@ -90,7 +84,7 @@ export default function Footer() {
         
         <div className="border-t border-muted/20 mt-12 pt-8 text-center">
           <p className="text-muted text-sm">
-            © {new Date().getFullYear()} Bunayat Property Management. All rights reserved. Made with 💙 for Oman's property managers.
+            {t('footer.copyright')}
           </p>
         </div>
       </div>

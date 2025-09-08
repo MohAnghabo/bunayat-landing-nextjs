@@ -1,8 +1,11 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
+import { LanguageSwitcher, MobileLanguageSwitcher } from "@/components/ui/language-switcher";
 import { Menu, X } from "lucide-react";
 
 export default function Header() {
+  const { t } = useTranslation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleRequestDemo = () => {
@@ -15,32 +18,35 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 glass-morphism border-b border-border">
       <nav className="container mx-auto px-4 py-3 flex justify-between items-center max-w-7xl">
-        <div className="flex items-center space-x-3">
+        <div className="flex items-center space-x-3 rtl:space-x-reverse">
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
             <span className="text-primary-foreground font-bold text-lg">B</span>
           </div>
-          <span className="font-bold text-xl text-foreground">Bunayat</span>
+          <span className="font-bold text-xl text-foreground">{t('header.logo')}</span>
         </div>
         
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex space-x-8 rtl:space-x-reverse">
           <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="nav-features">
-            Features
+            {t('header.nav.features')}
           </a>
           <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="nav-pricing">
-            Pricing
+            {t('header.nav.pricing')}
           </a>
           <a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="nav-faq">
-            FAQ
+            {t('header.nav.faq')}
           </a>
         </div>
         
-        <Button 
-          onClick={handleRequestDemo}
-          className="hidden md:block bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-medium transition-all hover:scale-105"
-          data-testid="button-request-demo"
-        >
-          Request Demo
-        </Button>
+        <div className="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
+          <LanguageSwitcher />
+          <Button 
+            onClick={handleRequestDemo}
+            className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-medium transition-all hover:scale-105"
+            data-testid="button-request-demo"
+          >
+            {t('header.cta')}
+          </Button>
+        </div>
         
         <button 
           className="md:hidden p-2"
@@ -64,7 +70,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               data-testid="mobile-nav-features"
             >
-              Features
+              {t('header.nav.features')}
             </a>
             <a 
               href="#pricing" 
@@ -72,7 +78,7 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               data-testid="mobile-nav-pricing"
             >
-              Pricing
+              {t('header.nav.pricing')}
             </a>
             <a 
               href="#faq" 
@@ -80,8 +86,9 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
               data-testid="mobile-nav-faq"
             >
-              FAQ
+              {t('header.nav.faq')}
             </a>
+            <MobileLanguageSwitcher />
             <Button 
               onClick={() => {
                 handleRequestDemo();
@@ -90,7 +97,7 @@ export default function Header() {
               className="w-full bg-[#2563eb] hover:bg-[#1d4ed8] text-white"
               data-testid="mobile-button-request-demo"
             >
-              Request Demo
+              {t('header.cta')}
             </Button>
           </div>
         </div>

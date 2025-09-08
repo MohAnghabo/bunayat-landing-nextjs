@@ -1,34 +1,23 @@
+import { useTranslation } from "react-i18next";
+
 export default function HowItWorks() {
-  const steps = [
-    {
-      number: 1,
-      emoji: "📄",
-      title: "Upload & Import",
-      description: "Upload PDF contracts or photos to import property units and tenant information."
-    },
-    {
-      number: 2,
-      emoji: "⚙️",
-      title: "Configure & Customize",
-      description: "Set up payment schedules and communication preferences."
-    },
-    {
-      number: 3,
-      emoji: "🚀",
-      title: "Launch & Automate",
-      description: "Go live with automated rent collection and tenant communication."
-    }
-  ];
+  const { t } = useTranslation();
+  const steps = t('howItWorks.steps', { returnObjects: true }) as Array<{
+    number: number;
+    emoji: string;
+    title: string;
+    description: string;
+  }>;
 
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
-            Get Started in 3 Simple Steps
+            {t('howItWorks.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            From setup to full automation in less than 24 hours.
+            {t('howItWorks.subtitle')}
           </p>
         </div>
         
