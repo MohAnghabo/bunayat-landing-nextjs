@@ -1,7 +1,6 @@
 import Header from "@/components/sections/header";
 import Hero from "@/components/sections/hero";
-import Problem from "@/components/sections/problem";
-import Solution from "@/components/sections/solution";
+import ProblemSolution from "@/components/sections/problem-solution";
 import SocialProof from "@/components/sections/social-proof";
 import Features from "@/components/sections/features";
 import HowItWorks from "@/components/sections/how-it-works";
@@ -17,8 +16,7 @@ export default function Home() {
     <div className="min-h-screen bg-background">
       <Header />
       <Hero />
-      <Problem />
-      <Solution />
+      <ProblemSolution />
       <SocialProof />
       <Features />
       <HowItWorks />
