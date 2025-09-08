@@ -1,38 +1,39 @@
-import { useEffect, useState } from 'react'
-import { initPostHog, trackUTMParameters, trackScrollDepth, trackTimeOnPage } from '@/lib/posthog'
+import React, { useEffect } from 'react'
+import { PostHogProvider as ReactPostHogProvider } from 'posthog-js/react'
+import { trackUTMParameters, trackScrollDepth, trackTimeOnPage } from '@/lib/posthog'
 
 interface PostHogProviderProps {
   children: React.ReactNode
 }
 
 export default function PostHogProvider({ children }: PostHogProviderProps) {
-  const [isInitialized, setIsInitialized] = useState(false)
-
   useEffect(() => {
-    // Initialize PostHog
-    initPostHog()
-    setIsInitialized(true)
-
-    // Track UTM parameters
+    // Track UTM parameters on first load
     trackUTMParameters()
 
     // Set up scroll depth tracking
     const cleanupScroll = trackScrollDepth()
-    
+
     // Set up time on page tracking
     const cleanupTime = trackTimeOnPage()
 
-    // Cleanup functions
     return () => {
       cleanupScroll?.()
       cleanupTime?.()
     }
   }, [])
 
-  // Don't render children until PostHog is initialized
-  if (!isInitialized) {
-    return <div>{children}</div>
-  }
-
-  return <>{children}</>
+  return (
+    <ReactPostHogProvider
+      apiKey={import.meta.env.VITE_PUBLIC_POSTHOG_KEY || ''}
+      options={{
+        api_host: '/api/posthog',
+        defaults: '2025-05-24',
+        capture_exceptions: true,
+        debug: import.meta.env.MODE === 'development',
+      }}
+    >
+      {children}
+    </ReactPostHogProvider>
+  )
 }

@@ -3,27 +3,30 @@ import posthog from 'posthog-js'
 // PostHog configuration
 export const initPostHog = () => {
   if (typeof window !== 'undefined') {
-    const posthogKey = import.meta.env.VITE_POSTHOG_KEY || 'phc_FbEMSqZSkO1lKgX2pBQtxPpFjsrCKg4yd0b0jxaEN51'
-    const posthogHost = import.meta.env.VITE_POSTHOG_HOST || 'https://us.i.posthog.com'
+    const posthogKey = import.meta.env.VITE_PUBLIC_POSTHOG_KEY || 'phc_FbEMSqZSkO1lKgX2pBQtxPpFjsrCKg4yd0b0jxaEN51'
+    const posthogHost = '/api/posthog'
     
     console.log('PostHog Config:', {
       key: posthogKey,
       host: posthogHost,
-      envKey: import.meta.env.VITE_POSTHOG_KEY,
-      envHost: import.meta.env.VITE_POSTHOG_HOST
+      envKey: import.meta.env.VITE_PUBLIC_POSTHOG_KEY,
+      envHost: import.meta.env.VITE_PUBLIC_POSTHOG_HOST
     })
     
     posthog.init(posthogKey, {
       api_host: posthogHost,
+      defaults: '2025-05-24',
       // Privacy settings
       respect_dnt: true,
       opt_out_capturing_by_default: false,
-      // Network settings to handle blocking
-      request_timeout_ms: 10000,
-      request_batching: true,
-      batch_events: true,
-      batch_size: 10,
-      batch_flush_interval_ms: 5000,
+      // Network settings to handle blocking (use defaults; batching not configurable in web SDK types)
+      // Referrer policy handling
+      cross_subdomain_cookie: false,
+      secure_cookie: true,
+      // Custom request configuration
+      xhr_headers: {
+        'Referrer-Policy': 'strict-origin-when-cross-origin'
+      },
       // Performance settings
       loaded: (posthog) => {
         console.log('PostHog loaded successfully!')
@@ -36,6 +39,11 @@ export const initPostHog = () => {
         
         // Configure user behavior analysis
         configureUserBehaviorAnalysis(posthog)
+      },
+      // Error handling for blocked requests
+      on_xhr_error: (failedRequest) => {
+        console.warn('PostHog request blocked:', failedRequest)
+        // This is likely due to ad-blocker - we'll continue without analytics
       },
       // GDPR compliance
       capture_pageview: false, // We'll capture manually
@@ -510,6 +518,39 @@ export const testPostHogEvents = () => {
     })
     
     console.log('PostHog test events sent!')
+    
+    // Check if requests are being blocked
+    setTimeout(() => {
+      checkPostHogBlocking()
+    }, 2000)
+  }
+}
+
+// Check if PostHog is being blocked by ad-blocker
+export const checkPostHogBlocking = () => {
+  if (typeof window !== 'undefined' && posthog) {
+    // Try to send a test request with proper referrer policy
+    const testUrl = '/api/posthog/e/'
+    fetch(testUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Referrer-Policy': 'strict-origin-when-cross-origin'
+      },
+      body: JSON.stringify({ test: true }),
+      referrerPolicy: 'strict-origin-when-cross-origin'
+    }).then(() => {
+      console.log('PostHog requests are working!')
+    }).catch((error) => {
+      console.warn('PostHog requests are being blocked:', error)
+      if (error.message.includes('ERR_BLOCKED_BY_CLIENT')) {
+        console.log('This is likely due to an ad-blocker. PostHog will continue to work for users without ad-blockers.')
+      } else if (error.message.includes('referrer')) {
+        console.log('This might be a referrer policy issue. Check browser console for more details.')
+      } else {
+        console.log('Unknown error:', error.message)
+      }
+    })
   }
 }
 
