@@ -18,6 +18,12 @@ export const initPostHog = () => {
       // Privacy settings
       respect_dnt: true,
       opt_out_capturing_by_default: false,
+      // Network settings to handle blocking
+      request_timeout_ms: 10000,
+      request_batching: true,
+      batch_events: true,
+      batch_size: 10,
+      batch_flush_interval_ms: 5000,
       // Performance settings
       loaded: (posthog) => {
         console.log('PostHog loaded successfully!')
