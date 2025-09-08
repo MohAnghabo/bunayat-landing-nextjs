@@ -21,12 +21,6 @@ export default function ProblemSolution() {
       solutionDesc: "Centralized tracking & automation"
     },
     {
-      problem: "Poor Communication",
-      problemDesc: "Delayed responses to tenants",
-      solution: "Instant Communication",
-      solutionDesc: "WhatsApp integration & tenant portal"
-    },
-    {
       problem: "No Financial Insights",
       problemDesc: "Lack of clear reporting",
       solution: "Advanced Analytics",

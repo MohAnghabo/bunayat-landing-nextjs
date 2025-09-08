@@ -55,11 +55,11 @@ export default function FAQ() {
           </p>
         </div>
         
-        <div className="columns-1 md:columns-2 gap-8 max-w-6xl mx-auto">
+        <div className="columns-1 md:columns-2 gap-6 max-w-6xl mx-auto space-y-6">
           {faqs.map((faq, index) => (
             <div 
               key={index}
-              className="break-inside-avoid bg-card rounded-lg shadow-lg border border-border animate-fade-in-up mb-8"
+              className="break-inside-avoid bg-card rounded-lg shadow-lg border border-border animate-fade-in-up mb-6"
               style={{ animationDelay: `${(index % 4) * 0.1}s` }}
             >
               <button 

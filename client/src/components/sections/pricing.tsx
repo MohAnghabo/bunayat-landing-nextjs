@@ -2,6 +2,19 @@ import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { useState } from "react";
 
+// OMR formatter with maximum 2 decimal places
+const omrFmt = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'OMR',
+  maximumFractionDigits: 2,
+});
+
+type DisplayPrice = {
+  price: string;
+  period: string;
+  savings: string | null;
+};
+
 export default function Pricing() {
   const [isAnnual, setIsAnnual] = useState(true);
 
@@ -52,7 +65,7 @@ export default function Pricing() {
     }
   ];
 
-  const getDisplayPrice = (monthlyPrice: number, planName: string) => {
+  const getDisplayPrice = (monthlyPrice: number, planName: string): DisplayPrice => {
     if (planName === "Enterprise") {
       return {
         price: "Contact Sales",
@@ -64,13 +77,13 @@ export default function Pricing() {
     if (isAnnual) {
       const annualPrice = monthlyPrice * 10; // 2 months free (10 months instead of 12)
       return {
-        price: `OMR ${annualPrice}`,
+        price: omrFmt.format(annualPrice),
         period: "/year",
-        savings: `Save OMR ${monthlyPrice * 2}`
+        savings: `Save ${omrFmt.format(monthlyPrice * 2)}`
       };
     }
     return {
-      price: `OMR ${monthlyPrice}`,
+      price: omrFmt.format(monthlyPrice),
       period: "/month",
       savings: null
     };
@@ -96,15 +109,38 @@ export default function Pricing() {
           
           {/* Billing Toggle */}
           <div className="flex items-center justify-center space-x-4 mb-8">
-            <span className={`text-lg font-medium ${!isAnnual ? 'text-foreground' : 'text-muted-foreground'}`}>
+            <label
+              onClick={() => setIsAnnual(false)}
+              className={`text-lg font-medium cursor-pointer select-none transition-colors hover:text-foreground px-2 py-1 rounded ${
+                !isAnnual ? 'text-foreground' : 'text-muted-foreground'
+              }`}
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setIsAnnual(false);
+                }
+              }}
+              aria-controls="billing-toggle"
+            >
               Monthly
-            </span>
+            </label>
             <button
               onClick={() => setIsAnnual(!isAnnual)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setIsAnnual(!isAnnual);
+                }
+              }}
               className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
                 isAnnual ? 'bg-primary' : 'bg-muted'
               }`}
+              role="switch"
+              aria-checked={isAnnual}
+              aria-label="Billing period"
               data-testid="billing-toggle"
+              id="billing-toggle"
             >
               <span
                 className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
@@ -112,9 +148,22 @@ export default function Pricing() {
                 }`}
               />
             </button>
-            <span className={`text-lg font-medium ${isAnnual ? 'text-foreground' : 'text-muted-foreground'}`}>
+            <label
+              onClick={() => setIsAnnual(true)}
+              className={`text-lg font-medium cursor-pointer select-none transition-colors hover:text-foreground px-2 py-1 rounded ${
+                isAnnual ? 'text-foreground' : 'text-muted-foreground'
+              }`}
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setIsAnnual(true);
+                }
+              }}
+              aria-controls="billing-toggle"
+            >
               Annual
-            </span>
+            </label>
             {isAnnual && (
               <span className="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded-full">
                 2 months free
