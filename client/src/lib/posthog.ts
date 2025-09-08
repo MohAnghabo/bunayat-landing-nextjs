@@ -3,8 +3,8 @@ import posthog from 'posthog-js'
 // PostHog configuration
 export const initPostHog = () => {
   if (typeof window !== 'undefined') {
-    posthog.init(import.meta.env.VITE_POSTHOG_KEY || 'phc-demo-key', {
-      api_host: import.meta.env.VITE_POSTHOG_HOST || 'https://app.posthog.com',
+    posthog.init(import.meta.env.VITE_POSTHOG_KEY || 'phc_FbEMSqZSkO1lKgX2pBQtxPpFjsrCKg4yd0b0jxaEN51', {
+      api_host: import.meta.env.VITE_POSTHOG_HOST || 'https://us.i.posthog.com',
       // Privacy settings
       respect_dnt: true,
       opt_out_capturing_by_default: false,
@@ -83,6 +83,13 @@ const configureUserBehaviorAnalysis = (posthog: any) => {
     ...userProperties,
     load_time: performance.now(),
     connection_type: getConnectionType(),
+  })
+  
+  // Manually capture page view since capture_pageview is disabled
+  posthog.capture('$pageview', {
+    $current_url: window.location.href,
+    $referrer: document.referrer,
+    ...userProperties
   })
 }
 
@@ -455,6 +462,38 @@ export const trackTimeOnPage = () => {
       window.removeEventListener('beforeunload', trackTime)
     }
   }
+}
+
+// Test function for PostHog verification
+export const testPostHogEvents = () => {
+  if (typeof window !== 'undefined' && posthog) {
+    // Test basic event
+    posthog.capture('test_event', {
+      test_property: 'test_value',
+      timestamp: new Date().toISOString(),
+      source: 'manual_test'
+    })
+    
+    // Test page view
+    posthog.capture('$pageview', {
+      $current_url: window.location.href,
+      $referrer: document.referrer
+    })
+    
+    // Test custom event
+    posthog.capture('posthog_installation_test', {
+      device_type: getDeviceType(),
+      browser: getBrowserInfo(),
+      test_successful: true
+    })
+    
+    console.log('PostHog test events sent!')
+  }
+}
+
+// Make test function available globally for browser console testing
+if (typeof window !== 'undefined') {
+  (window as any).testPostHogEvents = testPostHogEvents
 }
 
 export default posthog
