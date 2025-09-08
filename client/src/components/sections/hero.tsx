@@ -1,8 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { trackEvent, trackConversionFunnel } from "@/lib/posthog";
 
 export default function Hero() {
   const handleRequestDemo = () => {
+    // Track CTA click
+    trackConversionFunnel.ctaClick('hero');
+    trackEvent('cta_click', { 
+      location: 'hero',
+      button_text: 'Request Demo',
+      section: 'hero'
+    });
+    
     const demoForm = document.getElementById("demo-form");
     if (demoForm) {
       demoForm.scrollIntoView({ behavior: "smooth" });

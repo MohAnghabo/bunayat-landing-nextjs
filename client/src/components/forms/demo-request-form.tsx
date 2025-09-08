@@ -11,6 +11,7 @@ import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { demoRequestSchema, type DemoRequestFormData } from "@/lib/validations";
 import { CheckCircle, MessageCircle, Calendar } from "lucide-react";
+import { trackEvent, trackConversionFunnel } from "@/lib/posthog";
 
 export default function DemoRequestForm() {
   const { toast } = useToast();
@@ -36,6 +37,14 @@ export default function DemoRequestForm() {
     },
     onSuccess: () => {
       setSubmitted(true);
+      // Track successful form completion
+      trackConversionFunnel.formComplete();
+      trackEvent('form_complete', {
+        form_type: 'demo_request',
+        conversion_value: 'high',
+        properties_count: Object.keys(form.getValues()).length
+      });
+      
       toast({
         title: "Demo request submitted!",
         description: "We'll contact you within 24 hours to schedule your personalized demo.",
@@ -51,6 +60,13 @@ export default function DemoRequestForm() {
   });
 
   const onSubmit = (data: DemoRequestFormData) => {
+    // Track form start
+    trackConversionFunnel.formStart();
+    trackEvent('form_start', {
+      form_type: 'demo_request',
+      properties: Object.keys(data)
+    });
+    
     submitDemo.mutate(data);
   };
 
@@ -187,6 +203,12 @@ export default function DemoRequestForm() {
                 className="inline-flex items-center justify-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg text-sm font-medium min-h-[44px] transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  trackEvent('whatsapp_click', {
+                    location: 'demo_form',
+                    action: 'whatsapp_demo'
+                  });
+                }}
               >
                 <MessageCircle className="w-4 h-4 mr-2" />
                 WhatsApp Demo
@@ -194,6 +216,12 @@ export default function DemoRequestForm() {
               <a 
                 href="tel:+96891155004"
                 className="inline-flex items-center justify-center px-4 py-2 bg-secondary hover:bg-secondary/90 text-white rounded-lg text-sm font-medium min-h-[44px] transition-colors"
+                onClick={() => {
+                  trackEvent('phone_click', {
+                    location: 'demo_form',
+                    action: 'call_now'
+                  });
+                }}
               >
                 <Calendar className="w-4 h-4 mr-2" />
                 Call Now

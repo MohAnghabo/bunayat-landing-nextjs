@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import { useState } from "react";
+import { trackEvent, trackConversionFunnel } from "@/lib/posthog";
 
 // OMR formatter with maximum 2 decimal places
 const omrFmt = new Intl.NumberFormat('en-US', {
@@ -90,6 +91,12 @@ export default function Pricing() {
   };
 
   const handleLearnMore = () => {
+    // Track pricing interaction
+    trackEvent('pricing_interaction', {
+      action: 'learn_more_click',
+      section: 'pricing'
+    });
+    
     const demoForm = document.getElementById("demo-form");
     if (demoForm) {
       demoForm.scrollIntoView({ behavior: "smooth" });
