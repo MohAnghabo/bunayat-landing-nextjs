@@ -54,7 +54,12 @@ export default function Hero() {
           </div>
           
           <div className="relative animate-fade-in-up animate-delay-300">
-            <figure className="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 border border-border" role="img" aria-label="Bunayat property management dashboard showing rent collection, maintenance tracking, and financial reporting for Omani landlords">
+            <figure 
+              className="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 border border-border" 
+              role="img" 
+              aria-label="Bunayat property management dashboard showing rent collection, maintenance tracking, and financial reporting for Omani landlords"
+              style={{ contentVisibility: 'auto', containIntrinsicSize: '400px 300px' }}
+            >
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-destructive rounded-full"></div>
