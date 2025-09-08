@@ -36,7 +36,7 @@ export default function Solution() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
-            The Bunanyat Solution
+            The Bunayat Solution
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Purpose-built for the Omani property market with bilingual support and local payment integration.

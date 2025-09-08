@@ -63,7 +63,7 @@ export default function DemoRequestForm() {
             </div>
             <h3 className="text-xl font-semibold text-foreground mb-2">Request Submitted!</h3>
             <p className="text-muted-foreground">
-              Thank you for your interest in Bunanyat. We'll contact you within 24 hours to schedule your personalized demo.
+              Thank you for your interest in Bunayat. We'll contact you within 24 hours to schedule your personalized demo.
             </p>
           </div>
         </CardContent>
@@ -196,7 +196,7 @@ export default function DemoRequestForm() {
           </Button>
 
           <p className="text-xs text-muted-foreground text-center">
-            By submitting this form, you agree to receive marketing communications from Bunanyat.
+            By submitting this form, you agree to receive marketing communications from Bunayat.
           </p>
         </form>
       </CardContent>

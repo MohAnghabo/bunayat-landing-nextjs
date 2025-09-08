@@ -21,7 +21,7 @@ export default function SocialProof() {
           
           <div className="max-w-4xl mx-auto">
             <blockquote className="text-2xl lg:text-3xl font-medium text-foreground mb-6 leading-relaxed">
-              "Bunanyat transformed our property management operations. We've reduced administrative work by 75% and improved our tenant satisfaction significantly. The bilingual support is exactly what we needed in Oman."
+              "Bunayat transformed our property management operations. We've reduced administrative work by 75% and improved our tenant satisfaction significantly. The bilingual support is exactly what we needed in Oman."
             </blockquote>
             <div className="flex items-center justify-center space-x-4">
               <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center">

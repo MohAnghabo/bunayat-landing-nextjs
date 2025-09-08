@@ -4,8 +4,8 @@ import { MessageCircle } from "lucide-react";
 
 export default function Demo() {
   const handleWhatsAppDemo = () => {
-    const message = encodeURIComponent("Hi! I'm interested in a Bunanyat demo for my property management business. I manage [X] properties and would like to learn more about your automation features.");
-    const whatsappUrl = `https://wa.me/968XXXXXXXX?text=${message}`;
+    const message = encodeURIComponent("Hi! I'm interested in a Bunayat demo for my property management business. I manage properties and would like to learn more about your automation features.");
+    const whatsappUrl = `https://wa.me/96891155004?text=${message}`;
     window.open(whatsappUrl, '_blank');
   };
 
@@ -33,7 +33,7 @@ export default function Demo() {
     {
       emoji: "💰",
       title: "ROI Calculator",
-      description: "Calculate your potential savings and revenue increase with Bunanyat."
+      description: "Calculate your potential savings and revenue increase with Bunayat."
     }
   ];
 
@@ -45,7 +45,7 @@ export default function Demo() {
             Ready to Transform Your Property Management?
           </h2>
           <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-            See how Bunanyat can automate your operations, improve tenant satisfaction, and increase your revenue. Book a personalized demo today.
+            See how Bunayat can automate your operations, improve tenant satisfaction, and increase your revenue. Book a personalized demo today.
           </p>
           
           <div className="grid md:grid-cols-2 gap-12 mb-12">

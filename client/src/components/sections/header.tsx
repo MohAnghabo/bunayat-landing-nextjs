@@ -19,7 +19,7 @@ export default function Header() {
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
             <span className="text-primary-foreground font-bold text-lg">B</span>
           </div>
-          <span className="font-bold text-xl text-foreground">Bunanyat</span>
+          <span className="font-bold text-xl text-foreground">Bunayat</span>
         </div>
         
         <div className="hidden md:flex space-x-8">

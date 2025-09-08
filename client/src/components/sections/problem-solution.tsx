@@ -49,7 +49,7 @@ export default function ProblemSolution() {
             From Problems to Solutions
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Traditional property management methods cost landlords time and money. Bunanyat provides modern solutions for every challenge.
+            Traditional property management methods cost landlords time and money. Bunayat provides modern solutions for every challenge.
           </p>
         </div>
         
@@ -89,15 +89,8 @@ export default function ProblemSolution() {
           ))}
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="p-8 bg-destructive/10 rounded-2xl border border-destructive/20 text-center animate-fade-in-up">
-            <h3 className="text-2xl font-bold text-destructive mb-4">The Hidden Cost</h3>
-            <p className="text-lg text-destructive/80 mb-6">
-              Inefficient property management costs Omani landlords <strong>OMR 200+ per month</strong> in lost revenue and increased expenses.
-            </p>
-            <div className="text-3xl font-bold text-destructive">💸</div>
-          </div>
-          
+        <div className="grid md:grid-cols-1 gap-12 items-center">
+         
           <div className="bg-primary/5 p-8 rounded-2xl border border-primary/10 text-center animate-fade-in-up animate-delay-300">
             <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mx-auto mb-4">
               <CheckCircle className="w-8 h-8 text-primary-foreground" />

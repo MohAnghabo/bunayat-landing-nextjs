@@ -1,7 +1,7 @@
-# Bunanyat Landing Page - Complete AI Agent Build Prompt
+# Bunayat Landing Page - Complete AI Agent Build Prompt
 
 ## Project Overview
-Build a high-converting landing page for **Bunanyat**, a property management SaaS platform targeting landlords and property managers in Oman. The platform helps automate rent collection, maintenance coordination, and bilingual (Arabic/English) documentation.
+Build a high-converting landing page for **Bunayat**, a property management SaaS platform targeting landlords and property managers in Oman. The platform helps automate rent collection, maintenance coordination, and bilingual (Arabic/English) documentation.
 
 ## Technical Stack & Requirements
 
@@ -61,7 +61,7 @@ Light: #f9fafb (gray-50) - Background
   <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
     <div className="flex items-center space-x-2">
       <Logo className="h-8 w-8" />
-      <span className="font-bold text-xl">Bunanyat</span>
+      <span className="font-bold text-xl">Bunayat</span>
     </div>
     <div className="hidden md:flex space-x-6">
       <a href="#features">Features</a>
@@ -125,7 +125,7 @@ Light: #f9fafb (gray-50) - Background
 - **Visual flow**: Arrows between steps
 
 ### **8. Competitive Advantage**
-- **Comparison table**: Traditional vs Bunanyat
+- **Comparison table**: Traditional vs Bunayat
 - **Visual treatment**: Red X vs Green checkmarks
 - **Hover effects**: Subtle elevation on rows
 
@@ -200,7 +200,7 @@ const schema = z.object({
 ### **WhatsApp Integration**
 ```jsx
 const whatsappUrl = `https://wa.me/968XXXXXXXX?text=${encodeURIComponent(
-  "Hi! I'm interested in a Bunanyat demo for my property management business. I manage [X] properties and would like to learn more about your automation features."
+  "Hi! I'm interested in a Bunayat demo for my property management business. I manage [X] properties and would like to learn more about your automation features."
 )}`;
 ```
 
@@ -307,7 +307,7 @@ export function HeroSection() {
             >
               <Image
                 src="/dashboard-screenshot.png"
-                alt="Bunanyat Dashboard"
+                alt="Bunayat Dashboard"
                 width={600}
                 height={400}
                 className="rounded-lg shadow-2xl"
@@ -357,9 +357,9 @@ export function FeatureCard({ icon, title, description, features }: FeatureCardP
 ### **Environment Variables**
 ```bash
 NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=GA_MEASUREMENT_ID
-NEXT_PUBLIC_CALENDLY_URL=https://calendly.com/bunanyat
+NEXT_PUBLIC_CALENDLY_URL=https://calendly.com/bunayat
 NEXT_PUBLIC_WHATSAPP_NUMBER=968XXXXXXXX
-WEBHOOK_URL=https://api.bunanyat.com/webhooks/leads
+WEBHOOK_URL=https://api.bunayat.com/webhooks/leads
 ```
 
 ### **Build Commands**

@@ -5,32 +5,32 @@ export default function CompetitiveAdvantage() {
     {
       feature: "Rent Collection",
       traditional: "Manual tracking",
-      bunanyat: "Automated"
+      bunayat: "Automated"
     },
     {
       feature: "Language Support",
       traditional: "English only",
-      bunanyat: "Arabic & English"
+      bunayat: "Arabic & English"
     },
     {
       feature: "Maintenance Tracking",
       traditional: "Spreadsheets",
-      bunanyat: "Real-time dashboard"
+      bunayat: "Real-time dashboard"
     },
     {
       feature: "Tenant Communication",
       traditional: "Phone & Email",
-      bunanyat: "WhatsApp + Portal"
+      bunayat: "WhatsApp + Portal"
     },
     {
       feature: "Financial Reports",
       traditional: "Manual calculations",
-      bunanyat: "Automated analytics"
+      bunayat: "Automated analytics"
     },
     {
       feature: "Setup Time",
       traditional: "Weeks to months",
-      bunanyat: "Less than 24 hours"
+      bunayat: "Less than 24 hours"
     }
   ];
 
@@ -42,7 +42,7 @@ export default function CompetitiveAdvantage() {
             Traditional vs Modern Property Management
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            See why forward-thinking property managers in Oman are switching to Bunanyat.
+            See why forward-thinking property managers in Oman are switching to Bunayat.
           </p>
         </div>
         
@@ -52,7 +52,7 @@ export default function CompetitiveAdvantage() {
               <tr>
                 <th className="px-6 py-4 text-left text-foreground font-semibold">Feature</th>
                 <th className="px-6 py-4 text-center text-foreground font-semibold">Traditional Methods</th>
-                <th className="px-6 py-4 text-center text-foreground font-semibold bg-primary/10">Bunanyat Platform</th>
+                <th className="px-6 py-4 text-center text-foreground font-semibold bg-primary/10">Bunayat Platform</th>
               </tr>
             </thead>
             <tbody>
@@ -68,7 +68,7 @@ export default function CompetitiveAdvantage() {
                   <td className="px-6 py-4 text-center bg-primary/5">
                     <div className="flex items-center justify-center space-x-2">
                       <Check className="w-5 h-5 text-secondary" />
-                      <span className="text-foreground font-medium">{comparison.bunanyat}</span>
+                      <span className="text-foreground font-medium">{comparison.bunayat}</span>
                     </div>
                   </td>
                 </tr>

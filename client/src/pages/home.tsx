@@ -17,7 +17,7 @@ export default function Home() {
       <Header />
       <Hero />
       <ProblemSolution />
-      <SocialProof />
+      {/* <SocialProof /> */}
       <Features />
       <HowItWorks />
       <CompetitiveAdvantage />

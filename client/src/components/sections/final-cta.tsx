@@ -29,7 +29,7 @@ export default function FinalCTA() {
             Transform Your Property Management Today
           </h2>
           <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-            Join hundreds of property managers in Oman who have already automated their operations, improved tenant satisfaction, and increased revenue with Bunanyat.
+            Join hundreds of property managers in Oman who have already automated their operations, improved tenant satisfaction, and increased revenue with Bunayat.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12">
@@ -67,7 +67,7 @@ export default function FinalCTA() {
               className="text-primary font-semibold text-lg hover:underline"
               data-testid="link-phone"
             >
-              +968 2412 3456
+              +968 9115 5004
             </a>
             <p className="text-sm text-muted-foreground mt-2">Available 9 AM - 6 PM GST, Sunday - Thursday</p>
           </div>

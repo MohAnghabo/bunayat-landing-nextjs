@@ -63,7 +63,7 @@ export default function Hero() {
                   <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
                   <div className="w-3 h-3 bg-secondary rounded-full"></div>
                 </div>
-                <span className="text-sm text-muted-foreground">Bunanyat Dashboard</span>
+                <span className="text-sm text-muted-foreground">Bunayat Dashboard</span>
               </div>
               
               <div className="space-y-4">

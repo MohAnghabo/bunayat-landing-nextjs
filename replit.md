@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a modern property management SaaS landing page for **Bunanyat**, targeting landlords and property managers in Oman. The application is built as a full-stack web application with a React frontend and Express backend, featuring bilingual Arabic/English support and local market integrations.
+This is a modern property management SaaS landing page for **Bunayat**, targeting landlords and property managers in Oman. The application is built as a full-stack web application with a React frontend and Express backend, featuring bilingual Arabic/English support and local market integrations.
 
 ## User Preferences
 

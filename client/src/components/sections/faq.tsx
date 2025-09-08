@@ -6,16 +6,16 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "How quickly can I get started with Bunanyat?",
+      question: "How quickly can I get started with Bunayat?",
       answer: "Most customers are up and running within 24 hours. Our team provides free setup assistance, data migration from existing systems, and comprehensive onboarding. You can start with a few properties and gradually migrate your entire portfolio."
     },
     {
-      question: "Does Bunanyat support Arabic documents and communication?",
-      answer: "Yes! Bunanyat is fully bilingual with RTL (Right-to-Left) support for Arabic. You can generate contracts, invoices, and reports in both Arabic and English. The platform also supports Arabic text messaging and WhatsApp communication with tenants."
+      question: "Does Bunayat support Arabic documents and communication?",
+      answer: "Yes! Bunayat is fully bilingual with RTL (Right-to-Left) support for Arabic. You can generate contracts, invoices, and reports in both Arabic and English. The platform also supports Arabic text messaging and WhatsApp communication with tenants."
     },
     {
       question: "What payment methods are supported in Oman?",
-      answer: "Bunanyat integrates with major Omani banks including Bank Muscat, HSBC Oman, and National Bank of Oman. We support bank transfers, credit/debit cards, and mobile payments. All transactions are processed in OMR with full compliance to local banking regulations."
+      answer: "Bunayat integrates with major Omani banks including Bank Muscat, HSBC Oman, and National Bank of Oman. We support bank transfers, credit/debit cards, and mobile payments. All transactions are processed in OMR with full compliance to local banking regulations."
     },
     {
       question: "Can I import my existing property data?",
@@ -23,7 +23,7 @@ export default function FAQ() {
     },
     {
       question: "Is there a free trial available?",
-      answer: "Yes, we offer a 14-day free trial with full access to all features. No credit card required to start. We also provide a 30-day money-back guarantee on all paid plans, so you can try Bunanyat risk-free."
+      answer: "Yes, we offer a 14-day free trial with full access to all features. No credit card required to start. We also provide a 30-day money-back guarantee on all paid plans, so you can try Bunayat risk-free."
     },
     {
       question: "What kind of support do you provide?",
@@ -31,7 +31,7 @@ export default function FAQ() {
     },
     {
       question: "Is my data secure and compliant with Omani regulations?",
-      answer: "Yes, Bunanyat uses enterprise-grade security with 256-bit SSL encryption and secure data centers. We comply with Omani data protection regulations and Ministry of Housing standards. Your data is backed up daily and you retain full ownership of your information."
+      answer: "Yes, Bunayat uses enterprise-grade security with 256-bit SSL encryption and secure data centers. We comply with Omani data protection regulations and Ministry of Housing standards. Your data is backed up daily and you retain full ownership of your information."
     },
     {
       question: "Can I upgrade or downgrade my plan anytime?",
@@ -51,7 +51,7 @@ export default function FAQ() {
             Frequently Asked Questions
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Everything you need to know about Bunanyat property management platform.
+            Everything you need to know about Bunayat property management platform.
           </p>
         </div>
         
