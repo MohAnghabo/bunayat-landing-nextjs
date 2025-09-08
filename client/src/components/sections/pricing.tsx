@@ -108,11 +108,11 @@ export default function Pricing() {
           </p>
           
           {/* Billing Toggle */}
-          <div className="flex items-center justify-center space-x-4 mb-8">
+          <div className="flex items-center justify-center space-x-2 sm:space-x-4 mb-8">
             <label
               onClick={() => setIsAnnual(false)}
-              className={`text-lg font-medium cursor-pointer select-none transition-colors hover:text-foreground px-2 py-1 rounded ${
-                !isAnnual ? 'text-foreground' : 'text-muted-foreground'
+              className={`text-lg font-medium cursor-pointer select-none transition-colors hover:text-foreground px-3 py-2 rounded-lg min-h-[44px] flex items-center ${
+                !isAnnual ? 'text-foreground bg-primary/10' : 'text-muted-foreground'
               }`}
               tabIndex={0}
               onKeyDown={(e) => {
@@ -133,7 +133,7 @@ export default function Pricing() {
                   setIsAnnual(!isAnnual);
                 }
               }}
-              className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
+              className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
                 isAnnual ? 'bg-primary' : 'bg-muted'
               }`}
               role="switch"
@@ -143,15 +143,15 @@ export default function Pricing() {
               id="billing-toggle"
             >
               <span
-                className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                  isAnnual ? 'translate-x-6' : 'translate-x-1'
+                className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform shadow-sm ${
+                  isAnnual ? 'translate-x-7' : 'translate-x-1'
                 }`}
               />
             </button>
             <label
               onClick={() => setIsAnnual(true)}
-              className={`text-lg font-medium cursor-pointer select-none transition-colors hover:text-foreground px-2 py-1 rounded ${
-                isAnnual ? 'text-foreground' : 'text-muted-foreground'
+              className={`text-lg font-medium cursor-pointer select-none transition-colors hover:text-foreground px-3 py-2 rounded-lg min-h-[44px] flex items-center ${
+                isAnnual ? 'text-foreground bg-primary/10' : 'text-muted-foreground'
               }`}
               tabIndex={0}
               onKeyDown={(e) => {
@@ -172,13 +172,13 @@ export default function Pricing() {
           </div>
         </div>
         
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => {
             const displayPrice = getDisplayPrice(plan.monthlyPrice, plan.name);
             return (
               <div 
                 key={index}
-                className={`p-8 bg-card rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-fade-in-up relative ${
+                className={`p-6 md:p-8 bg-card rounded-2xl shadow-lg hover:shadow-xl transition-shadow animate-fade-in-up relative ${
                   plan.popular ? 'border-2 border-primary' : 'border border-border'
                 }`}
                 style={{ animationDelay: `${index * 0.1}s` }}
@@ -213,7 +213,7 @@ export default function Pricing() {
                 </ul>
                 <Button 
                   onClick={handleLearnMore}
-                  className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors ${
+                  className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors min-h-[44px] ${
                     plan.popular 
                       ? 'bg-[#2563eb] hover:bg-[#1d4ed8] text-white' 
                       : 'bg-muted hover:bg-muted/80 text-foreground'

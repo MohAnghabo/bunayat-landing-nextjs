@@ -42,7 +42,7 @@ export default function Hero() {
               <Button 
                 onClick={handleRequestDemo}
                 size="lg" 
-                className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-8 py-4 text-lg font-semibold transition-all hover:scale-105 hover:shadow-lg"
+                className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-8 py-4 text-lg font-semibold transition-all hover:scale-105 hover:shadow-lg min-h-[44px] w-full sm:w-auto"
                 data-testid="button-hero-request-demo"
               >
                 Request Demo
@@ -54,7 +54,7 @@ export default function Hero() {
           </div>
           
           <div className="relative animate-fade-in-up animate-delay-300">
-            <div className="bg-white rounded-2xl shadow-2xl p-6 border border-border">
+            <div className="bg-white rounded-2xl shadow-2xl p-4 sm:p-6 border border-border">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-destructive rounded-full"></div>
@@ -64,8 +64,8 @@ export default function Hero() {
                 <span className="text-sm text-muted-foreground">Bunayat Dashboard</span>
               </div>
               
-              <div className="space-y-4">
-                <div className="flex justify-between items-center p-4 bg-muted rounded-lg">
+              <div className="space-y-3 sm:space-y-4">
+                <div className="flex justify-between items-center p-3 sm:p-4 bg-muted rounded-lg">
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-primary rounded-lg"></div>
                     <div>
@@ -76,7 +76,7 @@ export default function Hero() {
                   <span className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">Paid</span>
                 </div>
                 
-                <div className="flex justify-between items-center p-4 bg-muted rounded-lg">
+                <div className="flex justify-between items-center p-3 sm:p-4 bg-muted rounded-lg">
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-secondary rounded-lg"></div>
                     <div>
@@ -87,12 +87,12 @@ export default function Hero() {
                   <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">In Progress</span>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-4">
-                  <div className="p-4 bg-primary/10 rounded-lg text-center">
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                  <div className="p-3 sm:p-4 bg-primary/10 rounded-lg text-center">
                     <p className="text-2xl font-bold text-primary">OMR 12,500</p>
                     <p className="text-sm text-muted-foreground">Monthly Revenue</p>
                   </div>
-                  <div className="p-4 bg-secondary/10 rounded-lg text-center">
+                  <div className="p-3 sm:p-4 bg-secondary/10 rounded-lg text-center">
                     <p className="text-2xl font-bold text-secondary">98.5%</p>
                     <p className="text-sm text-muted-foreground">Collection Rate</p>
                   </div>

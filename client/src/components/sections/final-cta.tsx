@@ -29,7 +29,7 @@ export default function FinalCTA() {
           <div className="flex justify-center items-center mb-12">
             <Button 
               onClick={handleRequestDemo}
-              className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105 hover:shadow-lg"
+              className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105 hover:shadow-lg min-h-[44px] w-full sm:w-auto"
               data-testid="button-request-demo-final"
             >
               Request Demo
@@ -51,14 +51,25 @@ export default function FinalCTA() {
           
           <div className="mt-12 p-6 bg-card rounded-xl shadow-lg border border-border max-w-md mx-auto">
             <h3 className="font-semibold text-foreground mb-2">Need immediate assistance?</h3>
-            <p className="text-muted-foreground mb-4">Call us directly for instant support</p>
-            <a 
-              href="tel:+96824123456" 
-              className="text-primary font-semibold text-lg hover:underline"
-              data-testid="link-phone"
-            >
-              +968 9115 5004
-            </a>
+            <p className="text-muted-foreground mb-4">Call us or message on WhatsApp</p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <a 
+                href="tel:+96891155004" 
+                className="text-primary font-semibold text-lg hover:underline min-h-[44px] flex items-center justify-center"
+                data-testid="link-phone"
+              >
+                +968 9115 5004
+              </a>
+              <a 
+                href="https://wa.me/96891155004?text=Hi! I'm interested in Bunayat for my property management business."
+                className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold min-h-[44px] flex items-center justify-center transition-colors"
+                data-testid="link-whatsapp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                WhatsApp
+              </a>
+            </div>
             <p className="text-sm text-muted-foreground mt-2">Available 9 AM - 6 PM GST, Sunday - Thursday</p>
           </div>
         </div>

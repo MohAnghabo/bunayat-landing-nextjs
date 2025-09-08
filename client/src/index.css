@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -106,6 +107,29 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
+  }
+  
+  /* Arabic text optimization */
+  [lang="ar"], .arabic-text {
+    font-family: 'Noto Sans Arabic', 'Inter', sans-serif;
+    direction: rtl;
+    text-align: right;
+  }
+  
+  /* High contrast for accessibility */
+  @media (prefers-contrast: high) {
+    :root {
+      --foreground: hsl(0, 0%, 0%);
+      --muted-foreground: hsl(0, 0%, 20%);
+      --border: hsl(0, 0%, 30%);
+    }
+  }
+  
+  /* Touch optimization */
+  @media (hover: none) and (pointer: coarse) {
+    button, [role="button"], input, select, textarea {
+      min-height: 44px;
+    }
   }
 }
 

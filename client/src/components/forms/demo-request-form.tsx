@@ -86,6 +86,8 @@ export default function DemoRequestForm() {
                 {...form.register("name")}
                 placeholder="Ahmed Al-Harthi"
                 data-testid="input-name"
+                className="min-h-[44px] text-base"
+                autoComplete="name"
               />
               {form.formState.errors.name && (
                 <p className="text-sm text-destructive mt-1">{form.formState.errors.name.message}</p>
@@ -100,6 +102,8 @@ export default function DemoRequestForm() {
                 {...form.register("email")}
                 placeholder="ahmed@example.com"
                 data-testid="input-email"
+                className="min-h-[44px] text-base"
+                autoComplete="email"
               />
               {form.formState.errors.email && (
                 <p className="text-sm text-destructive mt-1">{form.formState.errors.email.message}</p>
@@ -115,6 +119,9 @@ export default function DemoRequestForm() {
                 {...form.register("phone")}
                 placeholder="+968 XXXX XXXX"
                 data-testid="input-phone"
+                className="min-h-[44px] text-base"
+                autoComplete="tel"
+                inputMode="tel"
               />
               {form.formState.errors.phone && (
                 <p className="text-sm text-destructive mt-1">{form.formState.errors.phone.message}</p>
@@ -124,7 +131,7 @@ export default function DemoRequestForm() {
             <div>
               <Label>Number of Properties *</Label>
               <Select onValueChange={(value) => form.setValue("properties", value as any)}>
-                <SelectTrigger data-testid="select-properties">
+                <SelectTrigger data-testid="select-properties" className="min-h-[44px] text-base">
                   <SelectValue placeholder="Select range" />
                 </SelectTrigger>
                 <SelectContent>
@@ -175,13 +182,14 @@ export default function DemoRequestForm() {
             )}
           </div>
 
-          <div className="flex items-center space-x-2">
+          <div className="flex items-start space-x-3 py-2">
             <Checkbox
               id="software"
               {...form.register("software")}
               data-testid="checkbox-software"
+              className="mt-1 h-5 w-5"
             />
-            <Label htmlFor="software" className="text-sm">
+            <Label htmlFor="software" className="text-sm leading-relaxed cursor-pointer flex-1">
               I'm currently using property management software
             </Label>
           </div>
@@ -189,7 +197,7 @@ export default function DemoRequestForm() {
           <Button
             type="submit"
             disabled={submitDemo.isPending}
-            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground min-h-[44px] text-base"
             data-testid="button-submit-demo"
           >
             {submitDemo.isPending ? "Submitting..." : "Request Demo"}
