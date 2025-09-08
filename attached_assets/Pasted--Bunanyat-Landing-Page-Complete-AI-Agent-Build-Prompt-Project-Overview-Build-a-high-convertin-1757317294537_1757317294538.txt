@@ -1,0 +1,412 @@
+# Bunanyat Landing Page - Complete AI Agent Build Prompt
+
+## Project Overview
+Build a high-converting landing page for **Bunanyat**, a property management SaaS platform targeting landlords and property managers in Oman. The platform helps automate rent collection, maintenance coordination, and bilingual (Arabic/English) documentation.
+
+## Technical Stack & Requirements
+
+### **Framework & Tools**
+- **Next.js 14** with App Router
+- **TypeScript** for type safety
+- **Tailwind CSS** for styling
+- **shadcn/ui** component library
+- **Framer Motion** for animations
+- **React Hook Form + Zod** for form validation
+- **Lucide React** for icons
+
+### **Performance Requirements**
+- **Core Web Vitals**: LCP <2.5s, FID <100ms, CLS <0.1
+- **Mobile-first** responsive design
+- **3G network optimization** (common in Oman market)
+- **Image optimization** with Next.js Image component
+- **Lazy loading** for below-fold content
+
+### **Accessibility & Internationalization**
+- **WCAG 2.1 AA** compliance
+- **RTL (Right-to-Left)** support for Arabic content
+- **Keyboard navigation** for all interactive elements
+- **Screen reader** optimization
+- **High contrast ratios** (4.5:1 minimum)
+
+## Design System & Brand
+
+### **Color Palette**
+```
+Primary: #2563eb (blue-600) - Trust, professionalism
+Secondary: #059669 (emerald-600) - Growth, success  
+Accent: #dc2626 (red-600) - Urgency, CTAs
+Neutral: #374151 (gray-700) - Text
+Light: #f9fafb (gray-50) - Background
+```
+
+### **Typography**
+- **English**: Inter font family
+- **Arabic**: Noto Sans Arabic
+- **Headings**: 700 weight, tight line-height
+- **Body**: 400 weight, relaxed line-height
+- **CTAs**: 600 weight, uppercase tracking
+
+### **Spacing & Grid**
+- **Container**: max-width 1200px, centered
+- **Responsive breakpoints**: sm(640px), md(768px), lg(1024px), xl(1280px)
+- **Spacing scale**: 4px base unit (space-1=4px, space-4=16px, etc.)
+- **Grid**: 12-column system with consistent gutters
+
+## Page Structure & Content
+
+### **1. Header**
+```jsx
+// Sticky header with glass morphism effect
+<header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b">
+  <nav className="container mx-auto px-4 py-3 flex justify-between items-center">
+    <div className="flex items-center space-x-2">
+      <Logo className="h-8 w-8" />
+      <span className="font-bold text-xl">Bunanyat</span>
+    </div>
+    <div className="hidden md:flex space-x-6">
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#about">About</a>
+    </div>
+    <Button className="bg-primary hover:bg-primary/90">
+      Request Demo
+    </Button>
+  </nav>
+</header>
+```
+
+### **2. Hero Section**
+- **Layout**: Two-column on desktop, stacked on mobile
+- **Left**: Headline, subheadline, 3 key benefits, CTAs
+- **Right**: Dashboard screenshot with subtle animation
+- **Background**: Subtle gradient with geometric patterns
+
+**Key Elements:**
+- **H1**: "Modern Property Management for Oman" (text-5xl font-bold)
+- **3 Benefits**: Checkmark icons with benefits text
+- **Primary CTA**: "Request Demo" (large, prominent)
+- **Price indicator**: "Starting from OMR 25/month"
+
+### **3. Problem Section**
+- **Grid layout**: 5 problem cards in responsive grid
+- **Visual treatment**: Red X icons, subtle shadows
+- **Call-out box**: "Hidden Cost: OMR 200+ lost monthly"
+- **Animation**: Fade-in on scroll
+
+### **4. Solution Section**
+- **List layout**: 5 solutions with green checkmarks
+- **Contrast**: Direct opposite of problems
+- **Highlight box**: "Built for Oman's Property Market"
+
+### **5. Social Proof**
+- **Logo display**: Wijha Real Estate, Asawer Real Estate
+- **Placeholder styling**: 150x60px logo containers
+- **Testimonial**: Centered quote with attribution
+- **Trust indicators**: "Join property managers across Oman"
+
+### **6. Features Grid (2x2)**
+```jsx
+// Responsive grid with hover effects
+<div className="grid md:grid-cols-2 gap-8">
+  <FeatureCard 
+    icon="🏠" 
+    title="Complete Property Management"
+    description="Manage portfolios, buildings, units..."
+    features={["Import via CSV", "Track leases", "Generate reports"]}
+  />
+  // ... 3 more cards
+</div>
+```
+
+### **7. How It Works (3 Steps)**
+- **Timeline layout**: Horizontal on desktop, vertical on mobile
+- **Step indicators**: Numbers with connecting lines
+- **Updated Step 1**: "Upload PDF contract or take a pic to import units"
+- **Visual flow**: Arrows between steps
+
+### **8. Competitive Advantage**
+- **Comparison table**: Traditional vs Bunanyat
+- **Visual treatment**: Red X vs Green checkmarks
+- **Hover effects**: Subtle elevation on rows
+
+### **9. Pricing Section**
+- **3-card layout**: Starter, Professional, Enterprise
+- **Highlight**: Professional plan as "most popular"
+- **CTAs**: "Choose Plan" buttons with different styling
+- **Footer text**: "All plans include free setup and migration"
+
+### **10. Demo Section**
+- **Centered layout**: Headline, benefits, dual CTAs
+- **Integration points**: 
+  - Calendly embed/popup
+  - WhatsApp direct link with pre-filled message
+- **Visual hierarchy**: Benefits with emoji icons
+
+### **11. FAQ Section**
+- **Accordion design**: Expandable questions
+- **Grid layout**: 2 columns on desktop
+- **Smooth animations**: Expand/collapse with Framer Motion
+
+### **12. Final CTA**
+- **Hero-style layout**: Large headline, description, CTAs
+- **Contact info**: Phone number and hours
+- **Background**: Subtle gradient
+
+### **13. Footer**
+- **4-column layout**: Features, Company, Support, Connect
+- **Links**: Properly categorized navigation
+- **Copyright**: Branding statement
+
+## Interactive Elements & Animations
+
+### **Micro-interactions**
+- **Button hovers**: Scale and color transitions
+- **Card hovers**: Subtle lift with shadow
+- **Link hovers**: Underline animations
+- **Form focus**: Border color and scale changes
+
+### **Scroll Animations** (Framer Motion)
+```jsx
+// Fade in from bottom on scroll
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5 }}
+  viewport={{ once: true }}
+>
+```
+
+### **Loading States**
+- **Form submissions**: Spinner + disabled state
+- **Button interactions**: Loading indicator
+- **Image loading**: Skeleton placeholders
+
+## Forms & Integrations
+
+### **Demo Request Form**
+```jsx
+// React Hook Form with Zod validation
+const schema = z.object({
+  name: z.string().min(2, "Name required"),
+  email: z.string().email("Valid email required"),
+  phone: z.string().min(8, "Valid phone required"),
+  properties: z.enum(["1-10", "11-50", "51-200", "200+"]),
+  challenge: z.string().min(1, "Please select"),
+  software: z.boolean(),
+  time: z.enum(["morning", "afternoon"])
+});
+```
+
+### **WhatsApp Integration**
+```jsx
+const whatsappUrl = `https://wa.me/968XXXXXXXX?text=${encodeURIComponent(
+  "Hi! I'm interested in a Bunanyat demo for my property management business. I manage [X] properties and would like to learn more about your automation features."
+)}`;
+```
+
+### **Calendly Integration**
+- **Popup widget**: On "Schedule Demo" click
+- **Custom styling**: Match brand colors
+- **Event tracking**: Google Analytics integration
+
+## Analytics & Tracking
+
+### **Google Analytics 4 Events**
+```javascript
+// Track key interactions
+gtag('event', 'demo_request', {
+  event_category: 'conversion',
+  event_label: 'header_cta'
+});
+
+gtag('event', 'whatsapp_click', {
+  event_category: 'engagement',
+  event_label: 'demo_section'
+});
+```
+
+### **Conversion Tracking**
+- **Demo requests**: Form submissions
+- **WhatsApp clicks**: External link tracking
+- **Calendly bookings**: Event webhook
+- **Scroll depth**: 25%, 50%, 75%, 100%
+- **Time on page**: Engagement measurement
+
+## Technical Implementation Guidelines
+
+### **File Structure**
+```
+src/
+├── app/
+│   ├── page.tsx (main landing page)
+│   ├── layout.tsx (root layout)
+│   └── globals.css (Tailwind imports)
+├── components/
+│   ├── ui/ (shadcn components)
+│   ├── sections/ (page sections)
+│   └── forms/ (form components)
+├── lib/
+│   ├── utils.ts (utility functions)
+│   └── validations.ts (Zod schemas)
+└── public/
+    ├── images/ (optimized images)
+    └── logos/ (client logos)
+```
+
+### **SEO Optimization**
+- **Meta tags**: Title, description, OG tags
+- **Structured data**: Organization, Service schema
+- **Sitemap**: XML sitemap generation
+- **Robots.txt**: Search engine directives
+
+### **Performance Optimizations**
+- **Image optimization**: WebP format, responsive sizes
+- **Font optimization**: Preload critical fonts
+- **Code splitting**: Dynamic imports for heavy components
+- **Bundle analysis**: Monitor bundle size
+
+## Component Examples
+
+### **Hero Section Component**
+```jsx
+export function HeroSection() {
+  return (
+    <section className="py-20 lg:py-32 bg-gradient-to-br from-blue-50 to-white">
+      <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8">
+            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+              Modern Property Management for Oman
+            </h1>
+            <p className="text-xl text-gray-600 leading-relaxed">
+              Automate rent collection, maintenance, and tenant communication. 
+              Built specifically for Arabic/English operations in the Omani market.
+            </p>
+            <div className="space-y-4">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="flex items-center space-x-3">
+                  <CheckCircle className="h-5 w-5 text-emerald-600" />
+                  <span className="text-gray-700">{benefit}</span>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" className="bg-primary hover:bg-primary/90">
+                Request Demo
+              </Button>
+              <p className="text-sm text-gray-500 self-center">
+                Starting from OMR 25/month • No setup fees
+              </p>
+            </div>
+          </div>
+          <div className="relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Image
+                src="/dashboard-screenshot.png"
+                alt="Bunanyat Dashboard"
+                width={600}
+                height={400}
+                className="rounded-lg shadow-2xl"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+```
+
+### **Feature Card Component**
+```jsx
+interface FeatureCardProps {
+  icon: string;
+  title: string;
+  description: string;
+  features: string[];
+}
+
+export function FeatureCard({ icon, title, description, features }: FeatureCardProps) {
+  return (
+    <motion.div
+      whileHover={{ y: -5 }}
+      className="p-6 bg-white rounded-lg shadow-lg border hover:shadow-xl transition-shadow"
+    >
+      <div className="text-4xl mb-4">{icon}</div>
+      <h3 className="text-xl font-semibold mb-2 text-gray-900">{title}</h3>
+      <p className="text-gray-600 mb-4">{description}</p>
+      <ul className="space-y-2">
+        {features.map((feature, index) => (
+          <li key={index} className="flex items-center space-x-2">
+            <div className="w-1.5 h-1.5 bg-primary rounded-full" />
+            <span className="text-sm text-gray-700">{feature}</span>
+          </li>
+        ))}
+      </ul>
+    </motion.div>
+  );
+}
+```
+
+## Deployment & Environment
+
+### **Environment Variables**
+```bash
+NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=GA_MEASUREMENT_ID
+NEXT_PUBLIC_CALENDLY_URL=https://calendly.com/bunanyat
+NEXT_PUBLIC_WHATSAPP_NUMBER=968XXXXXXXX
+WEBHOOK_URL=https://api.bunanyat.com/webhooks/leads
+```
+
+### **Build Commands**
+```bash
+npm run build     # Production build
+npm run lint      # ESLint check
+npm run type-check # TypeScript validation
+npm run lighthouse # Performance audit
+```
+
+## Quality Assurance Checklist
+
+### **Cross-browser Testing**
+- [ ] Chrome, Firefox, Safari, Edge
+- [ ] Mobile Safari, Chrome Mobile
+- [ ] RTL display in Arabic browsers
+
+### **Performance Testing**
+- [ ] Lighthouse score >90 for all metrics
+- [ ] 3G network simulation
+- [ ] Image optimization verification
+
+### **Accessibility Testing**
+- [ ] Keyboard navigation flow
+- [ ] Screen reader compatibility
+- [ ] Color contrast validation
+- [ ] Focus indicator visibility
+
+### **Functionality Testing**
+- [ ] All CTAs working correctly
+- [ ] Form validation and submission
+- [ ] WhatsApp link with correct message
+- [ ] Calendly integration functional
+- [ ] Analytics event firing
+
+## Launch Requirements
+
+### **Content Delivery**
+- [ ] All copy implemented exactly as specified
+- [ ] Placeholder logos for Wijha and Asawer
+- [ ] Dashboard screenshot (mockup acceptable)
+- [ ] All sections responsive and functional
+
+### **Technical Delivery**
+- [ ] GitHub repository with clean commit history
+- [ ] Documentation for content updates
+- [ ] Deployment instructions
+- [ ] Analytics configuration guide
+
+Build this landing page with attention to conversion optimization, performance, and user experience. Focus on the Oman market context and ensure all Arabic/English elements work seamlessly.
