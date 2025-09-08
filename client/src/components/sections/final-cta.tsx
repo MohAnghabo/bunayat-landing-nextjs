@@ -23,7 +23,7 @@ export default function FinalCTA() {
             Transform Your Property Management Today
           </h2>
           <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-            Join hundreds of property managers in Oman who have already automated their operations, improved tenant satisfaction, and increased revenue with Bunayat.
+            Join hundreds of landlords who have already automated their operations, improved tenant satisfaction, and increased revenue with Bunayat.
           </p>
           
           <div className="flex justify-center items-center mb-12">

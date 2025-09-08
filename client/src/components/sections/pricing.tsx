@@ -104,7 +104,7 @@ export default function Pricing() {
             Simple, Transparent Pricing
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Choose the plan that fits your property portfolio. All plans include free setup and migration.
+            Choose the plan that fits your rental portfolio. All plans include free setup and migration.
           </p>
           
           {/* Billing Toggle */}

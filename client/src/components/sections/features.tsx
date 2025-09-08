@@ -40,7 +40,7 @@ export default function Features() {
             Everything You Need to Manage Properties
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive tools designed specifically for the Omani property management market.
+            Comprehensive tools designed specifically for the local rental market.
           </p>
         </div>
         

@@ -36,7 +36,7 @@ export default function ProblemSolution() {
             From Problems to Solutions
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Traditional property management methods cost landlords time and money. Bunayat provides modern solutions for every challenge.
+            Traditional rental operations cost landlords time and money. Bunayat provides modern solutions for every challenge.
           </p>
         </div>
         

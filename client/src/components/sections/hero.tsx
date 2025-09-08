@@ -12,7 +12,7 @@ export default function Hero() {
   const benefits = [
     "Bilingual Arabic/English support",
     "Automated rent collection & reminders",
-    "Maintenance coordination & tracking"
+    "Smart maintenance coordination"
   ];
 
   return (
@@ -24,8 +24,8 @@ export default function Hero() {
               Modern Property Management for Oman
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Automate rent collection, maintenance, and tenant communication. 
-              Built specifically for Arabic/English operations in the Omani market.
+              Streamline your rental operations with automated rent collection, maintenance coordination, and tenant communication. 
+              Designed for Arabic/English workflows in the local market.
             </p>
             
             <div className="space-y-4">
