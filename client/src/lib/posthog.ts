@@ -21,7 +21,7 @@ export const initPostHog = () => {
         maskInputOptions: {
           password: true,
           email: true,
-          phone: true,
+          tel: true,
         },
       },
     })
