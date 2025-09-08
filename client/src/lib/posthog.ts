@@ -3,14 +3,30 @@ import posthog from 'posthog-js'
 // PostHog configuration
 export const initPostHog = () => {
   if (typeof window !== 'undefined') {
-    posthog.init(import.meta.env.VITE_POSTHOG_KEY || 'phc_FbEMSqZSkO1lKgX2pBQtxPpFjsrCKg4yd0b0jxaEN51', {
-      api_host: import.meta.env.VITE_POSTHOG_HOST || 'https://us.i.posthog.com',
+    const posthogKey = import.meta.env.VITE_POSTHOG_KEY || 'phc_FbEMSqZSkO1lKgX2pBQtxPpFjsrCKg4yd0b0jxaEN51'
+    const posthogHost = import.meta.env.VITE_POSTHOG_HOST || 'https://us.i.posthog.com'
+    
+    console.log('PostHog Config:', {
+      key: posthogKey,
+      host: posthogHost,
+      envKey: import.meta.env.VITE_POSTHOG_KEY,
+      envHost: import.meta.env.VITE_POSTHOG_HOST
+    })
+    
+    posthog.init(posthogKey, {
+      api_host: posthogHost,
       // Privacy settings
       respect_dnt: true,
       opt_out_capturing_by_default: false,
       // Performance settings
       loaded: (posthog) => {
-        if (import.meta.env.DEV) console.log('PostHog loaded')
+        console.log('PostHog loaded successfully!')
+        
+        // Send a test event immediately
+        posthog.capture('posthog_loaded', {
+          timestamp: new Date().toISOString(),
+          url: window.location.href
+        })
         
         // Configure user behavior analysis
         configureUserBehaviorAnalysis(posthog)
