@@ -33,10 +33,10 @@ export default function ProblemSolution() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
-            From Problems to Solutions
+            Stop Losing Money on Manual Processes
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Traditional rental operations cost landlords time and money. Bunayat provides modern solutions for every challenge.
+            Traditional methods cost OMR 200+ monthly. Automate and get paid faster.
           </p>
         </div>
         

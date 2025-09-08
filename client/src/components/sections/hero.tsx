@@ -21,11 +21,10 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 animate-fade-in-up">
             <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
-              Modern Property Management for Oman
+              Stop Chasing Rent Payments. Automate Everything.
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              Streamline your rental operations with automated rent collection, maintenance coordination, and tenant communication. 
-              Designed for Arabic/English workflows in the local market.
+              Save 15+ hours weekly with automated rent collection and tenant communication. Built for Arabic/English workflows in Oman.
             </p>
             
             <div className="space-y-4">
@@ -49,8 +48,7 @@ export default function Hero() {
                 Request Demo
               </Button>
               <div className="flex flex-col">
-                <p className="text-sm text-muted-foreground">Starting from OMR 25/month</p>
-                <p className="text-sm text-muted-foreground">No setup fees • Free migration</p>
+                <p className="text-sm text-muted-foreground">From OMR 25/month • Free setup</p>
               </div>
             </div>
           </div>

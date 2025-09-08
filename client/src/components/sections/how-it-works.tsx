@@ -4,19 +4,19 @@ export default function HowItWorks() {
       number: 1,
       emoji: "📄",
       title: "Upload & Import",
-      description: "Upload PDF contracts or take photos to automatically import your property units and tenant information."
+      description: "Upload PDF contracts or photos to import property units and tenant information."
     },
     {
       number: 2,
       emoji: "⚙️",
       title: "Configure & Customize",
-      description: "Set up payment schedules, maintenance workflows, and communication preferences for your properties."
+      description: "Set up payment schedules and communication preferences."
     },
     {
       number: 3,
       emoji: "🚀",
       title: "Launch & Automate",
-      description: "Go live with automated rent collection, maintenance coordination, and tenant communication."
+      description: "Go live with automated rent collection and tenant communication."
     }
   ];
 

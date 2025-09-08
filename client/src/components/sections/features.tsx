@@ -37,10 +37,10 @@ export default function Features() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
-            Everything You Need to Manage Properties
+            Save 15+ Hours Weekly on Rent Collection
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive tools designed specifically for the local rental market.
+            Get paid faster with automated reminders and real-time dashboards.
           </p>
         </div>
         

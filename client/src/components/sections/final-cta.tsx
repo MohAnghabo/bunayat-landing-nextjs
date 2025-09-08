@@ -20,10 +20,10 @@ export default function FinalCTA() {
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
-            Transform Your Property Management Today
+            Get Your 15+ Hours Back Weekly
           </h2>
           <p className="text-xl text-muted-foreground mb-12 leading-relaxed">
-            Join hundreds of landlords who have already automated their operations, improved tenant satisfaction, and increased revenue with Bunayat.
+            Join hundreds of landlords saving 15+ hours weekly.
           </p>
           
           <div className="flex justify-center items-center mb-12">

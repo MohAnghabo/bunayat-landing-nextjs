@@ -101,10 +101,10 @@ export default function Pricing() {
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
-            Simple, Transparent Pricing
+            Start Saving Money Today
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Choose the plan that fits your rental portfolio. All plans include free setup and migration.
+            Choose your plan. Free setup included.
           </p>
           
           {/* Billing Toggle */}
