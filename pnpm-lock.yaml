@@ -119,6 +119,9 @@ importers:
       date-fns:
         specifier: ^3.6.0
         version: 3.6.0
+      dotenv:
+        specifier: ^17.2.2
+        version: 17.2.2
       drizzle-orm:
         specifier: ^0.39.3
         version: 0.39.3(@neondatabase/serverless@0.10.4)(@types/pg@8.15.5)(pg@8.16.3)
@@ -182,6 +185,9 @@ importers:
       recharts:
         specifier: ^2.15.4
         version: 2.15.4(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      resend:
+        specifier: ^6.0.3
+        version: 6.0.3
       tailwind-merge:
         specifier: ^2.6.0
         version: 2.6.0
@@ -1991,6 +1997,10 @@ packages:
   dom-helpers@5.2.1:
     resolution: {integrity: sha512-nRCa7CK3VTrM2NmGkIy4cbK7IZlgBE/PYMn55rrXefr5xXDP0LdtfPnblFDoVdcAfslJ7or6iqAUnx0CCGIWQA==}
 
+  dotenv@17.2.2:
+    resolution: {integrity: sha512-Sf2LSQP+bOlhKWWyhFsn0UsfdK/kCWRv1iuA2gXAwt3dyNabr6QSj00I2V10pidqz69soatm9ZwZvpQMTIOd5Q==}
+    engines: {node: '>=12'}
+
   drizzle-kit@0.30.6:
     resolution: {integrity: sha512-U4wWit0fyZuGuP7iNmRleQyK2V8wCuv57vf5l3MnG4z4fzNTjY/U13M8owyQ5RavqvqxBifWORaR3wIUzlN64g==}
     hasBin: true
@@ -3064,6 +3074,15 @@ packages:
   require-from-string@2.0.2:
     resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
     engines: {node: '>=0.10.0'}
+
+  resend@6.0.3:
+    resolution: {integrity: sha512-Yb7o2n52v91LjkUjq5vIZQbJrGiaPoMo2VPAyS0QTKA73tmvHMUQ7P1M56J1ux/Cw9Lf68PeaKidTl6GuS8DTA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@react-email/render': ^1.1.0
+    peerDependenciesMeta:
+      '@react-email/render':
+        optional: true
 
   resolve-from@5.0.0:
     resolution: {integrity: sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw==}
@@ -5207,6 +5226,8 @@ snapshots:
       '@babel/runtime': 7.28.4
       csstype: 3.1.3
 
+  dotenv@17.2.2: {}
+
   drizzle-kit@0.30.6:
     dependencies:
       '@drizzle-team/brocli': 0.10.2
@@ -6154,6 +6175,8 @@ snapshots:
   regexparam@3.0.0: {}
 
   require-from-string@2.0.2: {}
+
+  resend@6.0.3: {}
 
   resolve-from@5.0.0: {}
 
