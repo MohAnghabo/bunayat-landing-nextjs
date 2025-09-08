@@ -12,10 +12,12 @@ import { apiRequest } from "@/lib/queryClient";
 import { demoRequestSchema, type DemoRequestFormData } from "@/lib/validations";
 import { CheckCircle, MessageCircle, Calendar } from "lucide-react";
 import { trackEvent, trackConversionFunnel } from "@/lib/posthog";
+import { useUserBehavior } from "@/hooks/use-user-behavior";
 
 export default function DemoRequestForm() {
   const { toast } = useToast();
   const [submitted, setSubmitted] = useState(false);
+  const { trackFormInteraction } = useUserBehavior();
 
   const form = useForm<DemoRequestFormData>({
     resolver: zodResolver(demoRequestSchema),
@@ -129,6 +131,8 @@ export default function DemoRequestForm() {
               data-testid="input-name"
               className="min-h-[44px] text-base"
               autoComplete="name"
+              onFocus={() => trackFormInteraction('name', 'text', 'focus')}
+              onBlur={() => trackFormInteraction('name', 'text', 'blur', 0)}
             />
             {form.formState.errors.name && (
               <p className="text-sm text-destructive mt-1">{form.formState.errors.name.message}</p>
@@ -145,6 +149,8 @@ export default function DemoRequestForm() {
               data-testid="input-email"
               className="min-h-[44px] text-base"
               autoComplete="email"
+              onFocus={() => trackFormInteraction('email', 'email', 'focus')}
+              onBlur={() => trackFormInteraction('email', 'email', 'blur', 0)}
             />
             {form.formState.errors.email && (
               <p className="text-sm text-destructive mt-1">{form.formState.errors.email.message}</p>
@@ -161,6 +167,8 @@ export default function DemoRequestForm() {
               className="min-h-[44px] text-base"
               autoComplete="tel"
               inputMode="tel"
+              onFocus={() => trackFormInteraction('phone', 'tel', 'focus')}
+              onBlur={() => trackFormInteraction('phone', 'tel', 'blur', 0)}
             />
             {form.formState.errors.phone && (
               <p className="text-sm text-destructive mt-1">{form.formState.errors.phone.message}</p>
