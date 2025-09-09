@@ -19,9 +19,11 @@ export default function Header() {
     <header className="sticky top-0 z-50 glass-morphism border-b border-border">
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center max-w-7xl">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-            <span className="text-primary-foreground font-bold text-lg">B</span>
-          </div>
+          <img 
+            src="/logo.svg" 
+            alt="Bunayat Logo" 
+            className="h-8 w-auto"
+          />
           <span className="font-bold text-xl text-foreground">{t('header.logo')}</span>
         </div>
         
