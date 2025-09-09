@@ -14,11 +14,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
         properties: z.enum(["1-10", "11-50", "51-200", "200+"], {
           required_error: "Please select number of properties",
         }),
-        challenge: z.string().min(1, "Please select your main challenge"),
-        software: z.boolean().default(false),
-        time: z.enum(["morning", "afternoon"], {
-          required_error: "Please select preferred time",
-        }),
+        challenge: z.string().optional().default("general-inquiry"),
+        software: z.boolean().optional().default(false),
+        time: z.enum(["morning", "afternoon"]).optional().default("morning"),
       });
 
       const validatedData = demoRequestSchema.parse(req.body);

@@ -10,7 +10,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { demoRequestSchema, type DemoRequestFormData } from "@/lib/validations";
-import { CheckCircle, MessageCircle, Calendar, Phone } from "lucide-react";
+import { CheckCircle, MessageCircle, Phone } from "lucide-react";
 import { trackEvent, trackConversionFunnel } from "@/lib/posthog";
 import { useUserBehavior } from "@/hooks/use-user-behavior";
 import { useTranslation } from "react-i18next";
