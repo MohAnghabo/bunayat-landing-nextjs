@@ -4,7 +4,7 @@ import posthog from 'posthog-js'
 export const initPostHog = () => {
   if (typeof window !== 'undefined') {
     const posthogKey = import.meta.env.VITE_PUBLIC_POSTHOG_KEY || 'phc_FbEMSqZSkO1lKgX2pBQtxPpFjsrCKg4yd0b0jxaEN51'
-    const posthogHost = '/api/posthog'
+    const posthogHost = import.meta.env.VITE_PUBLIC_POSTHOG_HOST || 'https://us.i.posthog.com'
     
     console.log('PostHog Config:', {
       key: posthogKey,
