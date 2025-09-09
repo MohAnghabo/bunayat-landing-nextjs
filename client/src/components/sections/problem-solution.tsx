@@ -31,7 +31,7 @@ export default function ProblemSolution() {
             >
               {/* Problem Side */}
               <div className="flex-1 p-6 bg-destructive/5">
-                <div className="flex items-start space-x-3 rtl:space-x-reverse mb-4">
+                <div className="flex items-start gap-3 mb-4">
                   <div className="w-8 h-8 bg-destructive/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
                     <X className="w-4 h-4 text-destructive" />
                   </div>
@@ -44,7 +44,7 @@ export default function ProblemSolution() {
               
               {/* Solution Side */}
               <div className="flex-1 p-6 bg-secondary/5">
-                <div className="flex items-start space-x-3 rtl:space-x-reverse">
+                <div className="flex items-start gap-3">
                   <div className="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
                     <Check className="w-4 h-4 text-white" />
                   </div>
