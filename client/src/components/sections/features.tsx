@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import { Check } from "lucide-react";
 
 export default function Features() {
   const { t } = useTranslation();
@@ -48,8 +49,8 @@ export default function Features() {
               <p className="text-muted-foreground mb-6 text-lg">{feature.description}</p>
               <ul className="space-y-3">
                 {feature.items.map((item, itemIndex) => (
-                  <li key={itemIndex} className="flex items-center justify-center space-x-3 rtl:space-x-reverse">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                  <li key={itemIndex} className="flex items-center justify-center gap-3">
+                    <Check className="w-4 h-4 text-primary" />
                     <span className="text-foreground">{item}</span>
                   </li>
                 ))}
