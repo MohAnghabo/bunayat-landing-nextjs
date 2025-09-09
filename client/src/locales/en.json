@@ -6,29 +6,29 @@
       "pricing": "Pricing",
       "faq": "FAQ"
     },
-    "cta": "Request Demo"
+    "cta": "Request a Demo"
   },
   "hero": {
-    "title": "Streamline Property Management in Arabic & English",
-    "subtitle": "Omani landlords save 8+ hours weekly with automated invoicing, maintenance tracking, and bilingual tenant communications. Municipality-compliant from day one.",
+    "title": "Simplify Property Management in Arabic & English",
+    "subtitle": "Omani landlords save over 8 hours a week with automated invoicing, maintenance tracking, and bilingual tenant communication — all municipality-compliant from day one.",
     "benefits": [
-      "Bilingual Arabic/English support",
-      "Automated invoicing & reminders",
+      "Full Arabic & English support",
+      "Automated invoicing and payment reminders",
       "Smart maintenance coordination"
     ],
-    "pricing": "From OMR 25/month • Free setup",
+    "pricing": "Starting from OMR 25/month • Free setup included",
     "cta": "Start Free Trial",
     "secondaryCta": "Watch Demo",
-    "trust": "Trusted by 200+ Omani landlords",
+    "trust": "Trusted by 200+ landlords across Oman",
     "dashboard": {
       "title": "Bunayat Dashboard",
       "rentCard": {
-        "property": "Building A - Unit 201",
+        "property": "Building A — Unit 201",
         "rentDue": "Rent Due: OMR 450",
         "status": "Paid"
       },
       "maintenanceCard": {
-        "property": "Villa 15 - Maintenance",
+        "property": "Villa 15 — Maintenance",
         "request": "AC Repair Request",
         "status": "In Progress"
       },
@@ -39,106 +39,106 @@
     }
   },
   "problemSolution": {
-    "title": "Why Omani Landlords Choose Digital Solutions",
-    "subtitle": "Traditional methods cost time and compliance risks. Streamline with automated workflows.",
+    "title": "Why Landlords in Oman Are Going Digital",
+    "subtitle": "Traditional methods waste time and create compliance risks. Automated workflows keep everything simple and on track.",
     "items": [
       {
         "problem": "Manual Invoice Creation",
-        "problemDesc": "Typing Arabic invoices, municipal format compliance, tracking due dates manually",
-        "solution": "Scheduled Generation",
-        "solutionDesc": "Annual invoices auto-created in Arabic/English municipal format"
+        "problemDesc": "Typing invoices in Arabic, following municipal formats, and tracking due dates manually",
+        "solution": "Automated Scheduling",
+        "solutionDesc": "Invoices auto-generated annually in compliant Arabic and English formats"
       },
       {
         "problem": "Chasing Payment Confirmations",
-        "problemDesc": "Manual follow-ups, awkward phone calls, remembering who confirmed payment",
-        "solution": "Reminder Automation",
-        "solutionDesc": "Email/SMS sequences until payment confirmed by tenant"
+        "problemDesc": "Manual follow-ups, uncomfortable phone calls, and remembering who paid",
+        "solution": "Automated Reminders",
+        "solutionDesc": "SMS and email reminders continue until tenants confirm payment"
       },
       {
-        "problem": "Language Documentation",
-        "problemDesc": "Municipality requires Arabic contracts, tenants prefer English communication",
+        "problem": "Language Barriers",
+        "problemDesc": "Municipality requires Arabic contracts, while tenants prefer English",
         "solution": "Bilingual Templates",
-        "solutionDesc": "Municipality-compliant Arabic invoices, English tenant communications"
+        "solutionDesc": "Municipality-compliant Arabic invoices and contracts, with English communication for tenants"
       },
       {
         "problem": "Maintenance Chaos",
-        "problemDesc": "WhatsApp screenshots, lost vendor contacts, unclear repair status",
-        "solution": "Vendor Coordination",
-        "solutionDesc": "SMS/email notifications to vendors, status tracking without apps"
+        "problemDesc": "Unorganized WhatsApp chats, lost vendor contacts, unclear repair status",
+        "solution": "Centralized Vendor Coordination",
+        "solutionDesc": "Automatic SMS/email notifications to vendors with live status tracking — no apps required"
       }
     ]
   },
   "howItWorks": {
-    "title": "Get Started in 3 Simple Steps",
+    "title": "Get Started in 3 Easy Steps",
     "subtitle": "From setup to full automation in less than 24 hours.",
     "steps": [
       {
         "number": 1,
         "emoji": "📄",
         "title": "Upload & Import",
-        "description": "Upload PDF contracts or photos to import property units and tenant information."
+        "description": "Upload PDF contracts or photos to instantly import property units and tenant details."
       },
       {
         "number": 2,
         "emoji": "⚙️",
         "title": "Configure & Customize",
-        "description": "Set up payment schedules and communication preferences."
+        "description": "Set up rent schedules and communication preferences that work for you."
       },
       {
         "number": 3,
         "emoji": "🚀",
-        "title": "Launch & Automate",
-        "description": "Go live with automated rent collection and tenant communication."
+        "title": "Go Live & Automate",
+        "description": "Launch with automated rent collection and effortless tenant communication."
       }
     ]
   },
   "features": {
-    "title": "Three Honest Value Propositions",
-    "subtitle": "Real solutions for real Omani landlord challenges.",
+    "title": "Clear Value Landlords Can Trust",
+    "subtitle": "Real solutions for the daily challenges of Omani landlords.",
     "automatedInvoicing": {
       "title": "Automated Invoicing",
-      "description": "Stop creating invoices manually and chasing payment confirmations with phone calls. Bunanyat handles scheduled Arabic/English invoicing and automated reminder sequences while you focus on growing your portfolio.",
+      "description": "Stop creating invoices by hand and chasing payments over the phone. Bunayat issues scheduled invoices in Arabic and English, sends reminders automatically, and tracks confirmations — so you can focus on growing your portfolio.",
       "items": [
-        "Scheduled annual invoice generation",
-        "Automated SMS/email reminder sequences",
-        "Payment confirmation tracking"
+        "Annual or monthly invoice scheduling",
+        "Automated SMS and email reminders",
+        "Real-time payment confirmation tracking"
       ]
     },
     "omanCompliance": {
-      "title": "Built for Oman Compliance",
-      "description": "Arabic invoices meet municipal requirements. English tenant communications keep everyone informed. Bank transfer tracking works with Omani mobile banking habits.",
+      "title": "Built for Omani Compliance",
+      "description": "Arabic invoices meet all municipal requirements. English updates keep tenants informed. Bank transfer tracking works seamlessly with Omani mobile banking practices.",
       "items": [
-        "Arabic contracts with proper formatting",
-        "Compliant invoice numbering system",
+        "Properly formatted Arabic contracts",
+        "Municipality-compliant invoice numbering",
         "Bank transfer confirmation tracking"
       ]
     },
     "quickImplementation": {
-      "title": "Quick Implementation",
-      "description": "Import your current tenant list via Excel. Generate your first Arabic invoice the same day. No technical training required - if you use WhatsApp, you can use Bunanyat.",
+      "title": "Fast Setup",
+      "description": "Import your current tenant list with Excel and generate your first Arabic invoice the same day. No training needed — if you can use WhatsApp, you can use Bunayat.",
       "items": [
-        "Excel import with error checking",
-        "Same-day first invoice generation",
+        "Excel import with error checks",
+        "First invoice ready same day",
         "Phone support in Arabic & English"
       ]
     }
   },
   "pricing": {
-    "title": "Simple Pricing That Scales With You",
-    "subtitle": "Choose your plan. All plans include Arabic/English support and municipal compliance.",
+    "title": "Simple, Transparent Pricing",
+    "subtitle": "Pick the plan that fits your portfolio. Every plan includes Arabic/English support and municipality compliance.",
     "monthly": "Monthly",
     "annually": "Annual",
     "monthsFree": "2 months free",
     "save": "Save",
-    "footer": "All plans include Arabic/English support and municipal compliance.",
+    "footer": "All plans include bilingual support and full municipal compliance.",
     "plans": [
       {
         "name": "Starter",
-        "description": "Perfect for 5-25 units",
+        "description": "Ideal for 5–25 units",
         "features": [
           "Automated invoicing pays for itself",
           "Eliminates manual Arabic invoice creation",
-          "Wijha Real Estate saved 12 hours monthly",
+          "Wijha Real Estate saved 12+ hours monthly",
           "Annual billing cycles"
         ],
         "cta": "Learn More",
@@ -146,11 +146,11 @@
       },
       {
         "name": "Professional",
-        "description": "Growing portfolios 25-150 units",
+        "description": "Perfect for growing portfolios (25–150 units)",
         "features": [
-          "Add maintenance tracking",
-          "Vendor management included",
-          "Most customers upgrade here",
+          "Includes maintenance tracking",
+          "Built-in vendor management",
+          "Our most popular plan",
           "Manual payment confirmation included"
         ],
         "cta": "Learn More",
@@ -159,12 +159,12 @@
       },
       {
         "name": "Enterprise",
-        "description": "150+ units or multiple locations",
+        "description": "Best for 150+ units or multiple sites",
         "features": [
-          "Advanced reporting",
+          "Advanced reporting suite",
           "Custom integrations available",
-          "Asawer Real Estate manages 400+ units",
-          "Payment gateway integration available"
+          "Asawer Real Estate manages 400+ units on Bunayat",
+          "Optional payment gateway integration"
         ],
         "cta": "Learn More",
         "popular": false
@@ -176,43 +176,43 @@
     "subtitle": "Everything you need to know about Bunayat.",
     "questions": [
       {
-        "question": "How quickly can we start generating invoices?",
-        "answer": "Most landlords generate their first Arabic invoice within 30 minutes. We import your Excel tenant list, verify municipal formatting, and you can create compliant invoices same-day."
+        "question": "How quickly can I start generating invoices?",
+        "answer": "Most landlords issue their first Arabic invoice within 30 minutes. We import your Excel tenant list, verify formatting, and you can generate compliant invoices the same day."
       },
       {
-        "question": "Do tenants need to download an app for payments?",
-        "answer": "No. Tenants receive SMS and email notifications with invoice details. They confirm payments via bank transfer using their mobile number - the same method they use for other bills. You track confirmations in Bunayat."
+        "question": "Do tenants need to download an app?",
+        "answer": "No. Tenants receive SMS and email notifications with invoice details. They confirm payment via bank transfer — the same method they already use for utilities — and you track confirmations directly in Bunayat."
       },
       {
-        "question": "Is Arabic language support really complete?",
-        "answer": "Yes. All invoices, contracts, and official documents generate in proper Arabic formatting that meets municipality requirements. Our Omani customers submit these for audits without modifications."
+        "question": "Is Arabic language support complete?",
+        "answer": "Yes. Every invoice, contract, and official document is generated in proper Arabic formatting that fully meets municipality standards. Our Omani customers submit them for audits without edits."
       },
       {
         "question": "How does payment tracking work?",
-        "answer": "Tenants pay via bank transfer and confirm payment through SMS or email. You mark payments as received in Bunayat, which automatically stops reminder sequences. Payment gateway integration is available for Enterprise plans."
+        "answer": "Tenants pay via bank transfer and confirm by SMS or email. Payments are marked as received in Bunayat, which automatically stops reminder messages. Payment gateway integration is available in the Enterprise plan."
       },
       {
-        "question": "Can we export data for our accountant?",
-        "answer": "Everything exports to Excel with Omani accounting standards. Invoices, payment confirmations, tenant records - your accountant gets familiar formats without learning new software."
+        "question": "Can I export data for my accountant?",
+        "answer": "Yes. Export everything into Excel formatted to Omani accounting standards. Invoices, payment confirmations, tenant records — your accountant gets familiar files without learning new software."
       },
       {
-        "question": "What kind of support do you provide?",
-        "answer": "Arabic and English support via email, chat, and phone. Local team understands Omani regulations and municipal compliance requirements."
+        "question": "What type of support do you provide?",
+        "answer": "Support in both Arabic and English via email, chat, and phone. Our local team understands Omani regulations and municipal compliance requirements."
       },
       {
-        "question": "Is my data secure and compliant with Omani regulations?",
-        "answer": "Enterprise-grade security with 256-bit SSL encryption. Complies with Omani data protection regulations and municipal audit requirements."
+        "question": "Is my data secure and compliant with Omani law?",
+        "answer": "Bunayat uses enterprise-grade encryption and complies fully with Oman's data protection regulations and municipal audit standards."
       },
       {
-        "question": "Can I upgrade or downgrade my plan anytime?",
-        "answer": "Yes! Upgrade or downgrade anytime. Changes take effect immediately. No long-term contracts required."
+        "question": "Can I change my plan later?",
+        "answer": "Yes. You can upgrade or downgrade anytime, with changes effective immediately. No long-term contracts required."
       }
     ]
   },
   "form": {
-    "title": "Get Your Personalized Demo",
-    "subtitle": "Join 200+ property managers in Oman who save 15+ hours weekly",
-    "guarantee": "✓ Get your personalized demo in 24 hours",
+    "title": "Book Your Personalized Demo",
+    "subtitle": "Join 200+ property managers in Oman saving over 15 hours every week",
+    "guarantee": "✓ Your demo scheduled within 24 hours",
     "fields": {
       "name": {
         "label": "Full Name *",
@@ -230,9 +230,9 @@
         "label": "Number of Properties *",
         "placeholder": "Select range",
         "options": {
-          "1-10": "1-10 units",
-          "11-50": "11-50 units",
-          "51-200": "51-200 units",
+          "1-10": "1–10 units",
+          "11-50": "11–50 units",
+          "51-200": "51–200 units",
           "200+": "200+ units"
         }
       }
@@ -242,12 +242,12 @@
       "submitting": "Submitting...",
       "success": {
         "title": "Demo Request Submitted!",
-        "description": "Thank you for your interest in Bunayat. We'll contact you within 24 hours to schedule your personalized demo.",
+        "description": "Thanks for your interest in Bunayat. Our team will contact you within 24 hours to schedule your personalized demo.",
         "nextSteps": "What happens next?",
         "steps": [
-          "We'll review your property portfolio",
-          "Prepare a customized demo for your needs",
-          "Contact you to schedule your demo"
+          "We’ll review your property portfolio",
+          "Prepare a demo tailored to your needs",
+          "Contact you to schedule your session"
         ]
       },
       "error": {
@@ -255,16 +255,16 @@
       }
     },
     "alternatives": {
-      "title": "Prefer other options?",
-      "whatsapp": "WhatsApp Demo",
-      "call": "Call Now"
+      "title": "Prefer another option?",
+      "whatsapp": "Get a WhatsApp Demo",
+      "call": "Call Us Now"
     },
     "privacy": "By submitting this form, you agree to receive marketing communications from Bunayat."
   },
   "finalCta": {
-    "title": "Ready to streamline your property management?",
-    "subtitle": "Join 50+ Omani landlords already saving time with Bunanyat's automated invoicing and municipal compliance features.",
-    "cta": "Request Demo",
+    "title": "Ready to simplify property management?",
+    "subtitle": "Join 50+ Omani landlords already saving time with Bunayat’s automated invoicing and compliance tools.",
+    "cta": "Request a Demo",
     "stats": [
       {
         "value": "8+ Hours",
@@ -272,29 +272,29 @@
       },
       {
         "value": "30 Days",
-        "label": "average setup to full workflow"
+        "label": "average time to full workflow"
       },
       {
         "value": "24/7",
-        "label": "Arabic/English support"
+        "label": "Arabic & English support"
       }
     ],
     "assistance": {
-      "title": "Need immediate assistance?",
-      "subtitle": "Call us or message on WhatsApp",
+      "title": "Need help right away?",
+      "subtitle": "Call us or connect on WhatsApp",
       "phone": "+968 9115 5004",
       "whatsapp": "WhatsApp",
-      "hours": "Available 9 AM - 6 PM GST, Sunday - Thursday"
+      "hours": "Available 9 AM – 6 PM GST, Sunday – Thursday"
     }
   },
   "footer": {
-    "description": "Modern property management platform designed specifically for the Omani market with bilingual support and local integrations.",
+    "description": "A modern property management platform purpose-built for Oman, with bilingual support and local integrations.",
     "sections": {
       "features": {
         "title": "Features",
         "links": [
           "Property Management",
-          "Rent Collection", 
+          "Rent Collection",
           "Maintenance Tracking",
           "Financial Reports",
           "Tenant Communication",
@@ -324,11 +324,11 @@
         ]
       }
     },
-    "copyright": "© 2025 Bunayat Property Management. All rights reserved. Made with 💙 for Oman's property managers."
+    "copyright": "© 2025 Bunayat Property Management. All rights reserved. Made with 💙 for Oman's landlords."
   },
   "gdpr": {
     "title": "Privacy & Analytics",
-    "description": "We use analytics to improve your experience on our website. This helps us understand how you use our property management platform and optimize it for better performance. Your data is handled securely and never shared with third parties.",
+    "description": "We use analytics to improve your experience. This helps us understand how you use the platform and optimize it for better performance. Your data is always handled securely and never shared with third parties.",
     "accept": "Accept Analytics",
     "decline": "Decline",
     "privacyPolicy": "Privacy Policy"
