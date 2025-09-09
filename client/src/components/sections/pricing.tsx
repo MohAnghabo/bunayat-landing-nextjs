@@ -85,67 +85,36 @@ export default function Pricing() {
           </p>
           
           {/* Billing Toggle */}
-          <div className="flex items-center justify-center space-x-2 sm:space-x-4 mb-8">
-            <label
-              onClick={() => setIsAnnual(false)}
-              className={`text-lg font-medium cursor-pointer select-none transition-colors hover:text-foreground px-3 py-2 rounded-lg min-h-[44px] flex items-center ${
-                !isAnnual ? 'text-foreground bg-primary/10' : 'text-muted-foreground'
-              }`}
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  setIsAnnual(false);
-                }
-              }}
-              aria-controls="billing-toggle"
-            >
-{t('pricing.monthly')}
-            </label>
-            <button
-              onClick={() => setIsAnnual(!isAnnual)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  setIsAnnual(!isAnnual);
-                }
-              }}
-              className={`relative inline-flex h-8 w-14 items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${
-                isAnnual ? 'bg-primary' : 'bg-muted'
-              }`}
-              role="switch"
-              aria-checked={isAnnual}
-              aria-label="Billing period"
-              data-testid="billing-toggle"
-              id="billing-toggle"
-            >
-              <span
-                className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform shadow-sm ${
-                  isAnnual ? 'translate-x-7' : 'translate-x-1'
+          <div className="flex items-center justify-center mb-8">
+            <div className="inline-flex bg-muted rounded-lg p-1">
+              <button
+                onClick={() => setIsAnnual(false)}
+                className={`px-6 py-3 rounded-md text-sm font-medium transition-all ${
+                  !isAnnual 
+                    ? 'bg-white text-foreground shadow-sm' 
+                    : 'text-muted-foreground hover:text-foreground'
                 }`}
-              />
-            </button>
-            <label
-              onClick={() => setIsAnnual(true)}
-              className={`text-lg font-medium cursor-pointer select-none transition-colors hover:text-foreground px-3 py-2 rounded-lg min-h-[44px] flex items-center ${
-                isAnnual ? 'text-foreground bg-primary/10' : 'text-muted-foreground'
-              }`}
-              tabIndex={0}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  setIsAnnual(true);
-                }
-              }}
-              aria-controls="billing-toggle"
-            >
-{t('pricing.annually')}
-            </label>
-            {isAnnual && (
-              <span className="bg-green-100 text-green-800 text-sm font-medium px-2.5 py-0.5 rounded-full">
-{t('pricing.monthsFree')}
-              </span>
-            )}
+                data-testid="billing-monthly"
+              >
+                {t('pricing.monthly')}
+              </button>
+              <button
+                onClick={() => setIsAnnual(true)}
+                className={`px-6 py-3 rounded-md text-sm font-medium transition-all relative ${
+                  isAnnual 
+                    ? 'bg-white text-foreground shadow-sm' 
+                    : 'text-muted-foreground hover:text-foreground'
+                }`}
+                data-testid="billing-annually"
+              >
+                {t('pricing.annually')}
+                {isAnnual && (
+                  <span className="absolute -top-2 -right-2 bg-green-500 text-white text-xs px-1.5 py-0.5 rounded-full">
+                    {t('pricing.monthsFree')}
+                  </span>
+                )}
+              </button>
+            </div>
           </div>
         </div>
         
