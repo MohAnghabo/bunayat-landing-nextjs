@@ -8,6 +8,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import GDPRBanner from "@/components/ui/gdpr-banner";
 import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
+import StickyContactBar from "./components/ui/sticky-contact-bar";
 import "./lib/i18n";
 
 function Router() {
@@ -28,6 +29,7 @@ function App() {
             <Toaster />
             <Router />
             <GDPRBanner />
+            <StickyContactBar />
           </TooltipProvider>
         </LanguageProvider>
       </QueryClientProvider>
