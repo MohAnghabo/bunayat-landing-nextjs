@@ -46,7 +46,7 @@ export default function Hero() {
               ))}
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4 items-start">
+            <div className="flex flex-col sm:flex-row gap-4 items-center">
               <Button 
                 onClick={handleRequestDemo}
                 size="lg" 
@@ -55,7 +55,7 @@ export default function Hero() {
               >
                 {t('hero.cta')}
               </Button>
-              <div className="flex flex-col">
+              <div className="flex items-center">
                 <p className="text-sm text-muted-foreground">{t('hero.pricing')}</p>
               </div>
             </div>
