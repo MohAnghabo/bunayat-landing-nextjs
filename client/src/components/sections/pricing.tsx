@@ -161,7 +161,7 @@ export default function Pricing() {
                   onClick={handleLearnMore}
                   className={`w-full py-3 px-6 rounded-lg font-semibold transition-colors min-h-[44px] ${
                     plan.popular 
-                      ? 'bg-[#2563eb] hover:bg-[#1d4ed8] text-white' 
+                      ? 'bg-primary hover:bg-primary/90 text-white' 
                       : 'bg-muted hover:bg-muted/80 text-foreground'
                   }`}
                   data-testid={`button-plan-${plan.name.toLowerCase()}`}

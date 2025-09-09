@@ -50,7 +50,7 @@ export default function Hero() {
               <Button 
                 onClick={handleRequestDemo}
                 size="lg" 
-                className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-8 py-4 text-lg font-semibold transition-all hover:scale-105 hover:shadow-lg min-h-[44px] w-full sm:w-auto"
+                className="bg-primary hover:bg-primary/90 text-white px-8 py-4 text-lg font-semibold transition-all hover:scale-105 hover:shadow-lg min-h-[44px] w-full sm:w-auto"
                 data-testid="button-hero-request-demo"
               >
                 {t('hero.cta')}

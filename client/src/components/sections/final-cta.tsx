@@ -33,7 +33,7 @@ export default function FinalCTA() {
           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center mb-12">
             <Button 
               onClick={handleRequestDemo}
-              className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105 hover:shadow-lg min-h-[44px] w-full sm:w-auto"
+              className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all hover:scale-105 hover:shadow-lg min-h-[44px] w-full sm:w-auto"
               data-testid="button-request-demo-final"
             >
               {t('finalCta.cta')}

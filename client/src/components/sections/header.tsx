@@ -42,7 +42,7 @@ export default function Header() {
           <Button 
             onClick={handleRequestDemo}
             size="lg"
-            className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-medium transition-all hover:scale-105"
+            className="bg-primary hover:bg-primary/90 text-white font-medium transition-all hover:scale-105"
             data-testid="button-request-demo"
           >
             {t('header.cta')}
@@ -96,7 +96,7 @@ export default function Header() {
                 setMobileMenuOpen(false);
               }}
               size="lg"
-              className="w-full bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-medium"
+              className="w-full bg-primary hover:bg-primary/90 text-white font-medium"
               data-testid="mobile-button-request-demo"
             >
               {t('header.cta')}
