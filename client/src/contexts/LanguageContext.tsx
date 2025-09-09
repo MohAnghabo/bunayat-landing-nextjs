@@ -28,8 +28,8 @@ interface LanguageProviderProps {
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   const { i18n } = useTranslation();
-  const [language, setLanguageState] = useState<Language>('en');
-  const [direction, setDirection] = useState<Direction>('ltr');
+  const [language, setLanguageState] = useState<Language>('ar');
+  const [direction, setDirection] = useState<Direction>('rtl');
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);
@@ -56,8 +56,8 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     if (currentLang && ['en', 'ar'].includes(currentLang)) {
       setLanguage(currentLang);
     } else {
-      // Fallback to English if language is not supported
-      setLanguage('en');
+      // Fallback to Arabic if language is not supported
+      setLanguage('ar');
     }
   }, [i18n.language]);
 

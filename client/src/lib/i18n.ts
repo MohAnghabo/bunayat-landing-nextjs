@@ -20,7 +20,8 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    fallbackLng: 'en',
+    lng: 'ar', // Set Arabic as default language
+    fallbackLng: 'ar', // Fallback to Arabic if detection fails
     debug: process.env.NODE_ENV === 'development',
     
     detection: {
@@ -33,7 +34,7 @@ i18n
     },
     
     // Language direction mapping
-    supportedLngs: ['en', 'ar'],
+    supportedLngs: ['ar', 'en'], // Arabic first in supported languages
     nonExplicitSupportedLngs: true,
   });
 
