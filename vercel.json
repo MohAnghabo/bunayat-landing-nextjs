@@ -4,17 +4,6 @@
   "outputDirectory": "dist/public",
   "installCommand": "npm install",
   "framework": "vite",
-  "functions": {
-    "api/demo-request.ts": {
-      "runtime": "nodejs18.x"
-    },
-    "api/posthog/[...path].ts": {
-      "runtime": "nodejs18.x"
-    },
-    "api/posthog/e.ts": {
-      "runtime": "nodejs18.x"
-    }
-  },
   "headers": [
     {
       "source": "/(.*)",
