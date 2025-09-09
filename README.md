@@ -200,5 +200,5 @@ This project is proprietary and confidential. All rights reserved.
 
 <div align="center">
   <p>Built with ❤️ for the Omani property management market</p>
-  <p>© 2024 Bunayat. All rights reserved.</p>
+  <p>© 2025 Bunayat. All rights reserved.</p>
 </div>
