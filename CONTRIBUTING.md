@@ -147,9 +147,16 @@ export const Button: React.FC<ButtonProps> = ({ variant, children, onClick }) =>
 - Always include **RTL support** with `rtl:space-x-reverse`
 - Use semantic color tokens (primary, secondary, muted, etc.)
 - Ensure proper contrast ratios for accessibility
+- **Prefer `gap-4` over `space-x-4`** for more reliable RTL/LTR spacing
 
 ```tsx
-// ✅ Good - RTL support
+// ✅ Good - RTL support with gap (preferred)
+<div className="flex items-center gap-4">
+  <Icon />
+  <Text />
+</div>
+
+// ✅ Alternative - When space-x is needed
 <div className="flex items-center space-x-4 rtl:space-x-reverse">
   <Icon />
   <Text />
@@ -176,6 +183,8 @@ client/src/
 │   ├── forms/          # Form components
 │   ├── sections/       # Page sections (hero, pricing, etc.)
 │   └── ui/             # Reusable UI components
+│       ├── sticky-contact-bar.tsx  # Global sticky contact component
+│       └── ...other UI components
 ├── contexts/           # React contexts
 ├── hooks/              # Custom hooks
 ├── lib/                # Utilities and configurations

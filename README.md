@@ -22,6 +22,8 @@ Bunayat is a modern, bilingual property management platform designed specificall
 - **🔒 Privacy**: GDPR compliant with proper data handling
 - **🎯 A/B Testing**: Built-in feature flag support for optimization
 - **📧 Contact Forms**: Demo request forms with validation
+- **💬 Sticky Contact**: Global floating contact bar for better conversion
+- **🎨 Glass Morphism**: Modern UI effects with backdrop blur
 - **🚀 SEO Optimized**: Meta tags, structured data, and performance optimization
 
 ## 🛠️ Tech Stack
@@ -89,6 +91,7 @@ bunayat-landing-nextjs/
 │   │   │   ├── forms/      # Form components
 │   │   │   ├── sections/   # Page sections
 │   │   │   └── ui/         # Base UI components
+│   │   │       └── sticky-contact-bar.tsx  # Global contact bar
 │   │   ├── contexts/       # React contexts
 │   │   ├── hooks/          # Custom hooks
 │   │   ├── lib/            # Utilities and configurations
