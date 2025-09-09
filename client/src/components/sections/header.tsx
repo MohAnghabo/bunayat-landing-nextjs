@@ -17,31 +17,31 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 glass-morphism border-b border-border">
-      <nav className="container mx-auto px-4 py-3 flex justify-between items-center max-w-7xl">
-        <div className="flex items-center space-x-3 rtl:space-x-reverse">
+      <nav className="container mx-auto px-6 py-4 flex justify-between items-center max-w-7xl">
+        <div className="flex items-center gap-3">
           <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
             <span className="text-primary-foreground font-bold text-lg">B</span>
           </div>
           <span className="font-bold text-xl text-foreground">{t('header.logo')}</span>
         </div>
         
-        <div className="hidden md:flex space-x-8 rtl:space-x-reverse">
-          <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="nav-features">
+        <div className="hidden md:flex gap-8">
+          <a href="#features" className="text-muted-foreground hover:text-foreground transition-colors font-medium" data-testid="nav-features">
             {t('header.nav.features')}
           </a>
-          <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="nav-pricing">
+          <a href="#pricing" className="text-muted-foreground hover:text-foreground transition-colors font-medium" data-testid="nav-pricing">
             {t('header.nav.pricing')}
           </a>
-          <a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors" data-testid="nav-faq">
+          <a href="#faq" className="text-muted-foreground hover:text-foreground transition-colors font-medium" data-testid="nav-faq">
             {t('header.nav.faq')}
           </a>
         </div>
         
-        <div className="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
+        <div className="hidden md:flex items-center gap-4">
           <LanguageSwitcher />
           <Button 
             onClick={handleRequestDemo}
-            className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-medium transition-all hover:scale-105"
+            className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-medium transition-all hover:scale-105 px-6 py-2"
             data-testid="button-request-demo"
           >
             {t('header.cta')}
@@ -63,7 +63,7 @@ export default function Header() {
       
       {mobileMenuOpen && (
         <div className="md:hidden bg-background border-t border-border" data-testid="mobile-menu">
-          <div className="container mx-auto px-4 py-4 space-y-4">
+          <div className="container mx-auto px-6 py-6 space-y-4">
             <a 
               href="#features" 
               className="block text-muted-foreground hover:text-foreground"
