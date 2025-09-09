@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import DemoRequestForm from "@/components/forms/demo-request-form";
 import { useTranslation } from "react-i18next";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 export default function FinalCTA() {
   const { t } = useTranslation();
+  const { isRTL } = useLanguage();
   
   const handleRequestDemo = () => {
     const demoForm = document.getElementById("demo-form");
@@ -63,21 +65,20 @@ export default function FinalCTA() {
                 <div className="flex flex-col gap-4">
                   <a 
                     href="tel:+96891155004" 
-                    className="group flex items-center justify-center gap-3 text-primary font-semibold text-lg hover:text-primary/80 transition-colors min-h-[44px]"
+                    className="group flex items-center justify-center gap-4 text-primary font-semibold text-lg hover:text-primary/80 transition-colors min-h-[44px] px-4 py-2"
                     data-testid="link-phone-mobile"
-                    dir="ltr"
                   >
                     <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                       </svg>
                     </div>
-                    {t('finalCta.assistance.phone')}
+                    <span dir="ltr">{t('finalCta.assistance.phone')}</span>
                   </a>
                   
                   <a 
                     href="https://wa.me/96891155004?text=Hi! I'm interested in Bunayat for my property management business."
-                    className="group flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold min-h-[44px] transition-all hover:scale-105"
+                    className="group flex items-center justify-center gap-4 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-xl font-semibold min-h-[44px] transition-all hover:scale-105"
                     data-testid="link-whatsapp-mobile"
                     target="_blank"
                     rel="noopener noreferrer"

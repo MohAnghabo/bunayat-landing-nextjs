@@ -344,5 +344,11 @@
     "back": "رجوع",
     "next": "التالي",
     "previous": "السابق"
+  },
+  "stickyContact": {
+    "needHelp": "تحتاج مساعدة؟",
+    "weAreHere": "نحن هنا للمساعدة!",
+    "call": "اتصل",
+    "whatsapp": "واتساب"
   }
 }

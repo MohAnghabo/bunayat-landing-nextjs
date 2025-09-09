@@ -10,13 +10,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { demoRequestSchema, type DemoRequestFormData } from "@/lib/validations";
-import { CheckCircle, MessageCircle, Calendar } from "lucide-react";
+import { CheckCircle, MessageCircle, Calendar, Phone } from "lucide-react";
 import { trackEvent, trackConversionFunnel } from "@/lib/posthog";
 import { useUserBehavior } from "@/hooks/use-user-behavior";
 import { useTranslation } from "react-i18next";
+import { useLanguage } from "../../contexts/LanguageContext";
 
 export default function DemoRequestForm() {
   const { t } = useTranslation();
+  const { isRTL } = useLanguage();
   const { toast } = useToast();
   const [submitted, setSubmitted] = useState(false);
   const { trackFormInteraction } = useUserBehavior();
@@ -228,8 +230,8 @@ export default function DemoRequestForm() {
                   });
                 }}
               >
-                <Calendar className="w-4 h-4 mr-2 rtl:mr-0 rtl:ml-2" />
-                {t('form.alternatives.call')}
+                <Phone className="w-4 h-4 mr-2 rtl:mr-0 rtl:ml-2" />
+                <span dir={isRTL ? "rtl" : "ltr"}>{t('form.alternatives.call')}</span>
               </a>
             </div>
           </div>

@@ -344,5 +344,11 @@
     "back": "Back",
     "next": "Next",
     "previous": "Previous"
+  },
+  "stickyContact": {
+    "needHelp": "Need help?",
+    "weAreHere": "We're here to help!",
+    "call": "Call",
+    "whatsapp": "WhatsApp"
   }
 }
