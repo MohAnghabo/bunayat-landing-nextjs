@@ -151,7 +151,7 @@ export default function Pricing() {
                 </div>
                 <ul className="space-y-3 mb-8">
                   {plan.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center space-x-3 rtl:space-x-reverse">
+                    <li key={featureIndex} className="flex items-center gap-3">
                       <Check className="w-5 h-5 text-secondary" />
                       <span className="text-foreground">{feature}</span>
                     </li>

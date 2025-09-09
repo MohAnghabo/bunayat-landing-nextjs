@@ -53,7 +53,7 @@ export default function FAQ() {
               style={{ animationDelay: `${(index % 4) * 0.1}s` }}
             >
               <button 
-                className="w-full p-6 text-left focus:outline-none focus:ring-2 focus:ring-primary rounded-lg min-h-[44px] touch-manipulation"
+                className="w-full p-6 text-left focus:outline-none rounded-lg min-h-[44px] touch-manipulation"
                 onClick={() => toggleFAQ(index)}
                 data-testid={`faq-trigger-${index}`}
               >
