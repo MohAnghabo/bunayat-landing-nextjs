@@ -37,7 +37,7 @@ export default function Hero() {
             
             <div className="space-y-4">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-center space-x-3 rtl:space-x-reverse">
+                <div key={index} className="flex items-center gap-3">
                   <div className="w-5 h-5 bg-secondary rounded-full flex items-center justify-center">
                     <Check className="w-3 h-3 text-white" />
                   </div>
@@ -79,25 +79,25 @@ export default function Hero() {
               
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex justify-between items-center p-3 sm:p-4 bg-muted rounded-lg">
-                  <div className="flex items-center space-x-3 rtl:space-x-reverse">
-                    <div className="w-8 h-8 bg-primary rounded-lg"></div>
-                    <div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-primary rounded-lg flex-shrink-0"></div>
+                    <div className="flex-1 min-w-0">
                       <p className="font-medium">{t('hero.dashboard.rentCard.property')}</p>
                       <p className="text-sm text-muted-foreground">{t('hero.dashboard.rentCard.rentDue')}</p>
                     </div>
                   </div>
-                  <span className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm">{t('hero.dashboard.rentCard.status')}</span>
+                  <span className="px-3 py-1.5 bg-secondary text-secondary-foreground rounded-full text-sm font-medium">{t('hero.dashboard.rentCard.status')}</span>
                 </div>
                 
                 <div className="flex justify-between items-center p-3 sm:p-4 bg-muted rounded-lg">
-                  <div className="flex items-center space-x-3 rtl:space-x-reverse">
-                    <div className="w-8 h-8 bg-secondary rounded-lg"></div>
-                    <div>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 bg-secondary rounded-lg flex-shrink-0"></div>
+                    <div className="flex-1 min-w-0">
                       <p className="font-medium">{t('hero.dashboard.maintenanceCard.property')}</p>
                       <p className="text-sm text-muted-foreground">{t('hero.dashboard.maintenanceCard.request')}</p>
                     </div>
                   </div>
-                  <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">{t('hero.dashboard.maintenanceCard.status')}</span>
+                  <span className="px-3 py-1.5 bg-yellow-100 text-yellow-800 rounded-full text-sm font-medium">{t('hero.dashboard.maintenanceCard.status')}</span>
                 </div>
                 
                 <div className="grid grid-cols-2 gap-3 sm:gap-4">

@@ -41,7 +41,8 @@ export default function Header() {
           <LanguageSwitcher />
           <Button 
             onClick={handleRequestDemo}
-            className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-medium transition-all hover:scale-105 px-6 py-2"
+            size="lg"
+            className="bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-medium transition-all hover:scale-105"
             data-testid="button-request-demo"
           >
             {t('header.cta')}
@@ -94,7 +95,8 @@ export default function Header() {
                 handleRequestDemo();
                 setMobileMenuOpen(false);
               }}
-              className="w-full bg-[#2563eb] hover:bg-[#1d4ed8] text-white"
+              size="lg"
+              className="w-full bg-[#2563eb] hover:bg-[#1d4ed8] text-white font-medium"
               data-testid="mobile-button-request-demo"
             >
               {t('header.cta')}
